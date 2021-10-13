@@ -311,6 +311,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     align-items: center;
     background-color: slategray;
 }
+.body2 {
+    background-color: black;
+    color:white;
+}
 
 
 
