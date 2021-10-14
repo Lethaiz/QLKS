@@ -58,7 +58,7 @@
                     <div class="menu-desktop">
                         <ul class="main-menu">
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="@Url.Action("Index","HomePage")">Home</a>
                                 <ul class="sub-menu">
                                     <li><a href="index.html">Homepage 1</a></li>
                                     <li><a href="home-02.html">Homepage 2</a></li>
@@ -73,7 +73,7 @@
                             <li class="label1" data-label1="hot">
                                 <a href="shoping-cart.html">Features</a>
                             </li>
-                            <li><a href="@Url.Action("Dangky","User")">Đăng Ký</a></li>
+                            <li><a href="@Url.Action("Dangnhap","User")">Tài Khoản</a></li>
                             <li>
                                 <a href="blog.html">Blog</a>
                             </li>
@@ -1641,6 +1641,7 @@
     <script src="~/Scripts/slick-custom.js"></script>
     <!--===============================================================================================-->
     <script src="vendor/parallax100/parallax100.js"></script>
+    <script src="~/Scripts/parallax100.js"></script>
     <script>
         $('.parallax100').parallax100();
     </script>
@@ -1716,6 +1717,7 @@
     </script>
     <!--===============================================================================================-->
     <script src="js/main.js"></script>
+    <script src="~/Scripts/main.js"></script>
     <div class="btn-back-to-top" id="myBtn">
         <span class="symbol-btn-back-to-top">
             <i class="zmdi zmdi-chevron-up"></i>

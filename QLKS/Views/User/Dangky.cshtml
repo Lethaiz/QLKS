@@ -7,12 +7,13 @@
 
 
 <table align="center">
+ 
+    <h2 style=" padding-left :100px;color:white">Đăng Ký Thành Viên</h2>
+    @using (Html.BeginForm())
+    {
 
-    <h2 style="background-color: powderblue; text-align: center">Đăng Ký Thành Viên</h2>
-        @using (Html.BeginForm())
-        {
-            @Html.ValidationSummary(true)
-<tr style="height:40px">
+        @Html.ValidationSummary(true)
+        <tr style="height:40px;">
             <td>Họ Tên khách Hàng: </td>
             <td>
                 @Html.TextBox("HoTenKH")
@@ -74,14 +75,14 @@
                 <input type="number" max="100" min="18" name="Tuoi" />
             </td>
         </tr>
-        <tr style="height:70px">
+        <tr style="height:70px;resize:both">
             <td></td>
             <td>
-                <input type="submit" name="Đăng Ký" />
+                <input type="submit" name="Đăng Ký" class="btn btn-flat btn-large waves-effect waves-dark white grey-text text-darken-3"value="ăng Ký"/> 
             </td>
         </tr>
         <tr style="color: dodgerblue; font-size: 25px">
-            <td>Mún Đăng nhập ???==></td>
+            <td>Mún Đăng nhập ??? ==></td>
             <td>
 
                 <a href="@Url.Action("Dangnhap","User")">Đăng Nhập</a>

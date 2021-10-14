@@ -21,7 +21,7 @@ namespace QLKS.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Dangky(FormCollection collection, KHACHHANG kh)
+        public ActionResult Dangky(FormCollection collection, KhachHang kh)
         {
             var hoten = collection["HotenKH"];
             var tenDN = collection["TenDN"];
@@ -62,19 +62,20 @@ namespace QLKS.Controllers
             }
             else
             {
-                kh.HOTEN = hoten;
-                kh.TAIKHOAN = tenDN;
-                kh.MATKHAU = matkhau;
-                kh.EMAIL = email;
-                kh.DIACHI = diachi;
+                kh.TenKH = hoten;
+                kh.Taikhoan = tenDN;
+                kh.Matkhau = matkhau;
+                kh.Email = email;
+                kh.Diachi = diachi;
                 kh.DT = dt;
-                kh.NGAYSINH = DateTime.Parse(ngaysinh);
-                data.KHACHHANGs.InsertOnSubmit(kh);
+                kh.Ngaysinh = DateTime.Parse(ngaysinh);
+                data.KhachHangs.InsertOnSubmit(kh);
                 data.SubmitChanges();
                 return RedirectToAction("Dangnhap");
             }
             return this.Dangky();
         }
+
         [HttpGet]
         public ActionResult Dangnhap()
         {
@@ -94,13 +95,13 @@ namespace QLKS.Controllers
             }
             else
             {
-                KHACHHANG kh = data.KHACHHANGs.SingleOrDefault(n => n.TAIKHOAN == tenDN && n.MATKHAU == matkhau);
+                KhachHang kh = data.KhachHangs.SingleOrDefault(n => n.Taikhoan == tenDN && n.Matkhau == matkhau);
                 if (kh != null)
                 {
                     ViewBag.ThongBao = "Đăng Nhập Thành Công nha Bro";
                     Session["TaiKhoan"] = kh;
-                    Session["TaiKhoan2"] = kh.HOTEN;
-                    return RedirectToAction("Index", "Shop");
+                    Session["TaiKhoan2"] = kh.TenKH;
+                    return RedirectToAction("Index", "HomePage");
                 }
                 else
                     ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu sai nha xem lại đi!!";
