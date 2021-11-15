@@ -118,8 +118,51 @@ namespace QLKS.Controllers
         {
             return View();
         }
-
-
-    }
-    
+        public ActionResult Gopy()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Gopy(FormCollection collection,  Ykien g)
+        { 
+        var hoten = collection["HotenKH"];
+        var dt = collection["Dienthoai"];
+        var diachi = collection["Diachi"];
+        var email = collection["Email"];
+        var ngaysinh = String.Format("{0:MM/dd/yyyy}", collection["Ngaysinh"]);
+        var gopy = collection["Ykien"];
+            if (String.IsNullOrEmpty(hoten))
+            {
+                ViewData["Loi1"] = " Nhập Họ tên khách hàng bạn ơi không bỏ trống được";
+            }
+            else if (String.IsNullOrEmpty(dt))
+            {
+                ViewData["Loi5"] = " Nhập Số Điện Thoại đi chứ ngại gì";
+            }
+            else if (String.IsNullOrEmpty(diachi))
+{
+    ViewData["Loi6"] = " Nhập Địa chỉ bạn ơi không bỏ trống được";
 }
+if (String.IsNullOrEmpty(email))
+{
+    ViewData["Loi7"] = " Nhập Email bạn ơi không bỏ trống được";
+}
+else if (String.IsNullOrEmpty(gopy))
+{
+    ViewData["Loi8"] = " Nhập Điều Bạn Muốn Nói Với Chúng Tôi vào";
+}
+{
+  
+    g.Email = email;
+    g.Ykien1 = gopy;
+    data.Ykiens.InsertOnSubmit(g);
+    data.SubmitChanges();
+    return RedirectToAction("Loicamon", "User");
+}
+    }
+      
+    }
+
+
+}
+    

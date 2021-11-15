@@ -131,7 +131,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
-    <Compile Include="Controllers\LienheController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -240,6 +239,11 @@
     <Content Include="Views\User\Quenmatkhau.cshtml" />
     <Content Include="Views\User\ResetPassword.cshtml" />
     <Content Include="Views\User\Registration.cshtml" />
+    <Content Include="Views\Lienhe\Lienhe.cshtml" />
+    <Content Include="Views\Gopy\LienHe.cshtml" />
+    <Content Include="Views\Gopy\Index.cshtml" />
+    <Content Include="Views\User\Ykien.cshtml" />
+    <Content Include="Views\User\Gopy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

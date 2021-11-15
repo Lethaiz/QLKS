@@ -80,3 +80,4 @@ C:\Users\acer\source\repos\QLKS\QLKS\bin\Microsoft.CodeDom.Providers.DotNetCompi
 C:\Users\acer\source\repos\QLKS\QLKS\obj\Debug\QLKS.csproj.CopyComplete
 C:\Users\acer\source\repos\QLKS\QLKS\obj\Debug\QLKS.dll
 C:\Users\acer\source\repos\QLKS\QLKS\obj\Debug\QLKS.pdb
+C:\Users\acer\source\repos\QLKS\QLKS\obj\Debug\QLKS.csproj.AssemblyReference.cache
