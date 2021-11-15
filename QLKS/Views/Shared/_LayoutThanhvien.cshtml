@@ -59,7 +59,7 @@
                     <div class="menu-desktop">
                         <ul class="main-menu">
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="@Url.Action("Index","HomePage")">Home</a>
                                 <ul class="sub-menu">
                                     <li><a href="index.html">Homepage 1</a></li>
                                     <li><a href="home-02.html">Homepage 2</a></li>
@@ -68,13 +68,14 @@
                             </li>
 
                             <li>
-                                <a href="product.html">Shop</a>
+                                <a href="product.html">Room</a>
                             </li>
 
                             <li class="label1" data-label1="hot">
                                 <a href="shoping-cart.html">Features</a>
                             </li>
                             <li><a href="@Url.Action("Dangky","User")">Đăng Ký</a></li>
+                            <li><a href="@Url.Action("Dangnhap","User")">Đăng Nhập</a></li>
                             <li>
                                 <a href="blog.html">Blog</a>
                             </li>
@@ -84,7 +85,7 @@
                             </li>
 
                             <li>
-                                <a href="contact.html">Contact</a>
+                                <a href="@Url.Action("Index","Lienhe")">Liên Hệ</a>
                             </li>
                         </ul>
                     </div>
@@ -489,7 +490,7 @@
         </div>
     </section>
     <div class="body2">
-     
+
 
         @RenderBody()
 
@@ -689,7 +690,7 @@
     <script src="~/Scripts/slick.min.js"></script>
     <script src="~/Scripts/slick-custom.js"></script>
     <!--===============================================================================================-->
-    <script src="vendor/parallax100/parallax100.js"></script>
+    <script src="~/Scripts/parallax100.js"></script>
     <script>
         $('.parallax100').parallax100();
     </script>
@@ -775,31 +776,31 @@
             <div class="row">
                 <div class="col-sm-6 col-lg-3 p-b-50">
                     <h4 class="stext-301 cl0 p-b-30">
-                        Categories
+                        Room
                     </h4>
 
                     <ul>
                         <li class="p-b-10">
                             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Women
+                                1
                             </a>
                         </li>
 
                         <li class="p-b-10">
                             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Men
+                                2
                             </a>
                         </li>
 
                         <li class="p-b-10">
                             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Shoes
+                                3
                             </a>
                         </li>
 
                         <li class="p-b-10">
                             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                Watches
+                                4
                             </a>
                         </li>
                     </ul>
@@ -843,8 +844,7 @@
                     </h4>
 
                     <p class="stext-107 cl7 size-201">
-                        Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us
-                        on (+1) 96 716 6879
+                        DIA CHI
                     </p>
 
                     <div class="p-t-27">
@@ -886,23 +886,23 @@
             <div class="p-t-40">
                 <div class="flex-c-m flex-w p-b-18">
                     <a href="#" class="m-all-1">
-                        <img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
+                        <img src="~/Content/IMG/icon/icon-pay-01.png" alt="ICON-PAY">
                     </a>
 
                     <a href="#" class="m-all-1">
-                        <img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
+                        <img src="~/Content/IMG/icon/icon-pay-02.png" alt="ICON-PAY">
                     </a>
 
                     <a href="#" class="m-all-1">
-                        <img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
+                        <img src="~/Content/IMG/icon/icon-pay-03.png" alt="ICON-PAY">
                     </a>
 
                     <a href="#" class="m-all-1">
-                        <img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
+                        <img src="~/Content/IMG/icon/icon-pay-04.png" alt="ICON-PAY">
                     </a>
 
                     <a href="#" class="m-all-1">
-                        <img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
+                        <img src="~/Content/IMG/icon/icon-pay-05.png" alt="ICON-PAY">
                     </a>
                 </div>
 

@@ -5,11 +5,11 @@
 }
 
 
-
-
-<h4 style="color:red;text-align:center">@ViewBag.ThongBao</h4>
 <table align="center">
-    <h3 style="text-align:center">Đăng Nhập</h3>
+
+    <h4 style="color: red; ">@ViewBag.ThongBao</h4>
+
+    <h3 style="padding-left: 100px; color: white ">Đăng Nhập</h3>
     @using (Html.BeginForm())
     {
         @Html.ValidationSummary(true)
@@ -33,15 +33,23 @@
                 <input type="submit" name="Đăng Ký" class="btn btn-flat btn-large waves-effect waves-dark white grey-text text-darken-3" value="Đăng Nhập" />
             </td>
         </tr>
-        <tr style="color:dodgerblue;font-size:25px">
-            <td>Đăng ký Ngay==></td>
+        <tr style="color:red;font-size:25px">
+            <td> Click Here ==> </td>
             <td>
 
                 <a href="@Url.Action("Dangky","User") ">Đăng Ký Nào</a>
             </td>
+
         </tr>
+        <tr style="color:red;font-size:25px">
+            <td> Click Here ==></td>
+            <td>
 
-    }
-</table>
+                <a href="@Url.Action("Quenmatkhau","User") ">Quên Mật Khẩu</a>
 
+            </td>
+
+                </tr>
+            }
+    </table>
 

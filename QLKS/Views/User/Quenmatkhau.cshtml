@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Quenmatkhau";
+    Layout = "~/Views/Shared/_LayoutThanhvien.cshtml";
+}
+
+<table align="center">
+
+    <h4 style="color: red; ">@ViewBag.ThongBao</h4>
+
+    <h3 style="padding-left:100px; color: white ">Quên Mật Khẩu</h3>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+     
+<tr style="height:40px">
+ 
+    <td>Email:</td>
+
+    <td>
+        @Html.TextBox("EmailID", "", new { @class = "form--control" })
+    </td>
+</tr>
+        <tr style="height:40px">
+            <td></td>
+            <td>
+                <input type="submit" name="Gửi" class="btn btn-flat btn-large waves-effect waves-dark white grey-text text-darken-3" value="Gửi" />
+            </td>
+        </tr>
+
+
+        @*<div class="form-horizontal">
+                <hr />
+                <div class="text-success">
+                    @ViewBag.Message
+                </div>
+                <div class="form-group">
+                    <label class="control-label cod-md-2">Email ID</label>
+                    @Html.TextBox("EmailID", "", new { @class = "form--control" })
+                </div>
+                <div class="form-group">
+                    <div class="ccl-md-offset-2 cod-md-10">
+                        <input type="submit" value="Submit" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <tr style="color:red;font-size:25px">
+            <td> Click Here ==> </td>
+            <td>
+
+                <a href="@Url.Action("Dangky","User") ">Đăng Ký Nào</a>
+            </td>
+
+        </tr>
+        <tr style="color:red;font-size:25px">
+            <td> Click Here ==></td>
+            <td>
+
+                <a href="@Url.Action("Quenmatkhau","User") ">Đăng Nhập</a>
+
+            </td>
+
+        </tr>
+
+    }
+</table>
+

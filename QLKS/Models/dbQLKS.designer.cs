@@ -33,6 +33,9 @@ namespace QLKS.Models
     partial void InsertAdmin(Admin instance);
     partial void UpdateAdmin(Admin instance);
     partial void DeleteAdmin(Admin instance);
+    partial void InsertYkien(Ykien instance);
+    partial void UpdateYkien(Ykien instance);
+    partial void DeleteYkien(Ykien instance);
     partial void InsertChiTietHoaDon(ChiTietHoaDon instance);
     partial void UpdateChiTietHoaDon(ChiTietHoaDon instance);
     partial void DeleteChiTietHoaDon(ChiTietHoaDon instance);
@@ -45,6 +48,9 @@ namespace QLKS.Models
     partial void InsertKhachHang(KhachHang instance);
     partial void UpdateKhachHang(KhachHang instance);
     partial void DeleteKhachHang(KhachHang instance);
+    partial void InsertLienHe(LienHe instance);
+    partial void UpdateLienHe(LienHe instance);
+    partial void DeleteLienHe(LienHe instance);
     partial void InsertLoaiPhong(LoaiPhong instance);
     partial void UpdateLoaiPhong(LoaiPhong instance);
     partial void DeleteLoaiPhong(LoaiPhong instance);
@@ -94,6 +100,14 @@ namespace QLKS.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<Ykien> Ykiens
+		{
+			get
+			{
+				return this.GetTable<Ykien>();
+			}
+		}
+		
 		public System.Data.Linq.Table<ChiTietHoaDon> ChiTietHoaDons
 		{
 			get
@@ -123,6 +137,14 @@ namespace QLKS.Models
 			get
 			{
 				return this.GetTable<KhachHang>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LienHe> LienHes
+		{
+			get
+			{
+				return this.GetTable<LienHe>();
 			}
 		}
 		
@@ -236,6 +258,116 @@ namespace QLKS.Models
 					this._HoTen = value;
 					this.SendPropertyChanged("HoTen");
 					this.OnHoTenChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Ykien")]
+	public partial class Ykien : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Makh;
+		
+		private string _Email;
+		
+		private string _Ykien1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMakhChanging(int value);
+    partial void OnMakhChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnYkien1Changing(string value);
+    partial void OnYkien1Changed();
+    #endregion
+		
+		public Ykien()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Makh", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Makh
+		{
+			get
+			{
+				return this._Makh;
+			}
+			set
+			{
+				if ((this._Makh != value))
+				{
+					this.OnMakhChanging(value);
+					this.SendPropertyChanging();
+					this._Makh = value;
+					this.SendPropertyChanged("Makh");
+					this.OnMakhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Ykien", Storage="_Ykien1", DbType="NVarChar(100)")]
+		public string Ykien1
+		{
+			get
+			{
+				return this._Ykien1;
+			}
+			set
+			{
+				if ((this._Ykien1 != value))
+				{
+					this.OnYkien1Changing(value);
+					this.SendPropertyChanging();
+					this._Ykien1 = value;
+					this.SendPropertyChanged("Ykien1");
+					this.OnYkien1Changed();
 				}
 			}
 		}
@@ -951,6 +1083,8 @@ namespace QLKS.Models
 		
 		private string _Matkhau;
 		
+		private string _ResetPasswordCode;
+		
 		private EntitySet<HoaDon> _HoaDons;
 		
     #region Extensibility Method Definitions
@@ -975,6 +1109,8 @@ namespace QLKS.Models
     partial void OnTaikhoanChanged();
     partial void OnMatkhauChanging(string value);
     partial void OnMatkhauChanged();
+    partial void OnResetPasswordCodeChanging(string value);
+    partial void OnResetPasswordCodeChanged();
     #endregion
 		
 		public KhachHang()
@@ -1163,6 +1299,26 @@ namespace QLKS.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResetPasswordCode", DbType="NVarChar(150)")]
+		public string ResetPasswordCode
+		{
+			get
+			{
+				return this._ResetPasswordCode;
+			}
+			set
+			{
+				if ((this._ResetPasswordCode != value))
+				{
+					this.OnResetPasswordCodeChanging(value);
+					this.SendPropertyChanging();
+					this._ResetPasswordCode = value;
+					this.SendPropertyChanged("ResetPasswordCode");
+					this.OnResetPasswordCodeChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_HoaDon", Storage="_HoaDons", ThisKey="MaKH", OtherKey="MaKH")]
 		public EntitySet<HoaDon> HoaDons
 		{
@@ -1206,6 +1362,116 @@ namespace QLKS.Models
 		{
 			this.SendPropertyChanging();
 			entity.KhachHang = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LienHe")]
+	public partial class LienHe : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaKH;
+		
+		private string _Email;
+		
+		private string _Ykien;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaKHChanging(int value);
+    partial void OnMaKHChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnYkienChanging(string value);
+    partial void OnYkienChanged();
+    #endregion
+		
+		public LienHe()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MaKH
+		{
+			get
+			{
+				return this._MaKH;
+			}
+			set
+			{
+				if ((this._MaKH != value))
+				{
+					this.OnMaKHChanging(value);
+					this.SendPropertyChanging();
+					this._MaKH = value;
+					this.SendPropertyChanged("MaKH");
+					this.OnMaKHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ykien", DbType="NVarChar(100)")]
+		public string Ykien
+		{
+			get
+			{
+				return this._Ykien;
+			}
+			set
+			{
+				if ((this._Ykien != value))
+				{
+					this.OnYkienChanging(value);
+					this.SendPropertyChanging();
+					this._Ykien = value;
+					this.SendPropertyChanged("Ykien");
+					this.OnYkienChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	

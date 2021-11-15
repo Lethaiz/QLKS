@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 
@@ -10,6 +12,7 @@ namespace QLKS.Controllers
     public class UserController : Controller
     {
         dbQLKSDataContext data = new dbQLKSDataContext();
+
         // GET: User
         public ActionResult Index()
         {
@@ -109,5 +112,14 @@ namespace QLKS.Controllers
             return View();
 
         }
+
+
+        public ActionResult Quenmatkhau()
+        {
+            return View();
+        }
+
+
     }
+    
 }

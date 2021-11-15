@@ -1,3 +1,4 @@
+C:\Users\acer\source\repos\QLKS\QLKS\obj\Debug\QLKS.csproj.CoreCompileInputs.cache
 C:\Users\acer\source\repos\QLKS\QLKS\bin\QLKS.dll.config
 C:\Users\acer\source\repos\QLKS\QLKS\bin\QLKS.dll
 C:\Users\acer\source\repos\QLKS\QLKS\bin\QLKS.pdb
@@ -51,6 +52,8 @@ C:\Users\acer\source\repos\QLKS\QLKS\bin\roslyn\vbc.rsp
 C:\Users\acer\source\repos\QLKS\QLKS\bin\roslyn\VBCSCompiler.exe
 C:\Users\acer\source\repos\QLKS\QLKS\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\acer\source\repos\QLKS\QLKS\bin\Antlr3.Runtime.dll
+C:\Users\acer\source\repos\QLKS\QLKS\bin\EntityFramework.dll
+C:\Users\acer\source\repos\QLKS\QLKS\bin\EntityFramework.SqlServer.dll
 C:\Users\acer\source\repos\QLKS\QLKS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\acer\source\repos\QLKS\QLKS\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\acer\source\repos\QLKS\QLKS\bin\Newtonsoft.Json.dll
@@ -62,6 +65,8 @@ C:\Users\acer\source\repos\QLKS\QLKS\bin\System.Web.WebPages.Deployment.dll
 C:\Users\acer\source\repos\QLKS\QLKS\bin\System.Web.WebPages.dll
 C:\Users\acer\source\repos\QLKS\QLKS\bin\System.Web.WebPages.Razor.dll
 C:\Users\acer\source\repos\QLKS\QLKS\bin\WebGrease.dll
+C:\Users\acer\source\repos\QLKS\QLKS\bin\EntityFramework.xml
+C:\Users\acer\source\repos\QLKS\QLKS\bin\EntityFramework.SqlServer.xml
 C:\Users\acer\source\repos\QLKS\QLKS\bin\System.Web.Helpers.xml
 C:\Users\acer\source\repos\QLKS\QLKS\bin\System.Web.Mvc.xml
 C:\Users\acer\source\repos\QLKS\QLKS\bin\System.Web.Optimization.xml
@@ -72,8 +77,6 @@ C:\Users\acer\source\repos\QLKS\QLKS\bin\System.Web.WebPages.Razor.xml
 C:\Users\acer\source\repos\QLKS\QLKS\bin\Newtonsoft.Json.xml
 C:\Users\acer\source\repos\QLKS\QLKS\bin\Antlr3.Runtime.pdb
 C:\Users\acer\source\repos\QLKS\QLKS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\acer\source\repos\QLKS\QLKS\obj\Debug\QLKS.csproj.AssemblyReference.cache
-C:\Users\acer\source\repos\QLKS\QLKS\obj\Debug\QLKS.csproj.CoreCompileInputs.cache
 C:\Users\acer\source\repos\QLKS\QLKS\obj\Debug\QLKS.csproj.CopyComplete
 C:\Users\acer\source\repos\QLKS\QLKS\obj\Debug\QLKS.dll
 C:\Users\acer\source\repos\QLKS\QLKS\obj\Debug\QLKS.pdb
