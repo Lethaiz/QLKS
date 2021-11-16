@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -143,6 +144,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Admincss\animate.css" />
+    <Content Include="Content\Admincss\animsition.min.css" />
+    <Content Include="Content\Admincss\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\Admincss\bootstrap-progressbar-3.3.4.min.css" />
+    <Content Include="Content\Admincss\bootstrap.min.css" />
+    <Content Include="Content\Admincss\font-awesome.min.css" />
+    <Content Include="Content\Admincss\font-face.css" />
+    <Content Include="Content\Admincss\fontawesome-all.min.css" />
+    <Content Include="Content\Admincss\fullcalendar.css" />
+    <Content Include="Content\Admincss\hamburgers.min.css" />
+    <Content Include="Content\Admincss\material-design-iconic-font.min.css" />
+    <Content Include="Content\Admincss\perfect-scrollbar.css" />
+    <Content Include="Content\Admincss\select2.min.css" />
+    <Content Include="Content\Admincss\slick.css" />
+    <Content Include="Content\Admincss\theme.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -161,9 +177,21 @@
     <Content Include="Content\IMG\icon\icon-pay-04.png" />
     <Content Include="Content\IMG\icon\icon-pay-05.png" />
     <Content Include="Content\IMG\icon\icon-prev.png" />
+    <Content Include="Content\IMG\icon\logo.png" />
     <Content Include="fonts\font-awesome.min.css" />
     <Content Include="fonts\icon-font.min.css" />
     <Content Include="fonts\material-design-iconic-font.min.css" />
+    <Content Include="Scripts\Admin\bootstrap-progressbar.min.js" />
+    <Content Include="Scripts\Admin\bootstrap.min.js" />
+    <Content Include="Scripts\Admin\circle-progress.min.js" />
+    <Content Include="Scripts\Admin\fullcalendar.js" />
+    <Content Include="Scripts\Admin\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\Admin\jquery.counterup.min.js" />
+    <Content Include="Scripts\Admin\jquery.waypoints.min.js" />
+    <Content Include="Scripts\Admin\main.js" />
+    <Content Include="Scripts\Admin\moment.min.js" />
+    <Content Include="Scripts\Admin\popper.min.js" />
+    <Content Include="Scripts\Admin\wow.min.js" />
     <Content Include="Scripts\animsition.min.js" />
     <Content Include="Scripts\isotope.pkgd.min.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
@@ -244,6 +272,12 @@
     <Content Include="Views\Gopy\Index.cshtml" />
     <Content Include="Views\User\Ykien.cshtml" />
     <Content Include="Views\User\Gopy.cshtml" />
+    <Content Include="Views\Admin\AdminPage.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\LoginAdmin.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\DateLayout.cshtml" />
+    <Content Include="Views\Admin\DateTime.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
