@@ -1,0 +1,27 @@
+﻿@model QLKS.Models.LoaiPhong
+
+@{
+    ViewBag.Title = "ChiTietLP";
+    Layout = "~/Views/Admin/QuanLyLayout.cshtml";
+}
+
+<h2>ChiTietLP</h2>
+
+<div>
+    <h4>LoaiPhong</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenLP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLP)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaLP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

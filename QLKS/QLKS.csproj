@@ -296,17 +296,20 @@
     <Content Include="Views\HomePage\About.cshtml" />
     <Content Include="Views\Shared\AboutPage.cshtml" />
     <Content Include="Views\Admin\QuanLyLayout.cshtml" />
-    <Content Include="Views\Admin\QLPhong.cshtml" />
     <Content Include="Views\QLKHUVUC\Create.cshtml" />
     <Content Include="Views\QLKHUVUC\KhuVuc.cshtml" />
     <Content Include="Views\QLKHUVUC\Details.cshtml" />
     <Content Include="Views\QLKHUVUC\Delete.cshtml" />
     <Content Include="Views\QLKHUVUC\Edit.cshtml" />
+    <Content Include="Views\QLLP\Loaiphong.cshtml" />
+    <Content Include="Views\QLLP\ChiTietLP.cshtml" />
+    <Content Include="Views\QLLP\themloai.cshtml" />
+    <Content Include="Views\QLLP\xoaloai.cshtml" />
+    <Content Include="Views\QLLP\Sualoai.cshtml" />
+    <Content Include="Views\QLPHONG\QLPhong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\QLLP\" />
-    <Folder Include="Views\QLPHONG\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

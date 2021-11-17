@@ -1,0 +1,67 @@
+﻿
+@using QLKS.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<QLKS.Models.Phong>
+@{
+    ViewBag.Title = "QLPhong";
+    Layout = "~/Views/Admin/QuanLyLayout.cshtml";
+}
+
+
+<h2>Quản Lý Thông Tin Phong</h2>
+
+
+<p>
+    @Html.ActionLink("THÊM MỚI", "Themmoisanpham")
+</p>
+<table class="table" border="1">
+    <tr>
+        <th style="width:200px">  Số  Phòng </th>
+        <th style="width:100px">  Giá Phòng </th>
+        <th style="width:300px">  Mô tả    </th>
+        <th style="width:120px">  Ảnh  </th>
+        <th style="width:200px">  Loại Phòng </th>
+        <th style="width:100px">  Khu vực  </th>
+        <th style="width:200px">  </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoPhong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaPhong) VND
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mota)
+            </td>
+            <td>
+                <img src="@Url.Content("~/Content/img/" +  item.ANH)" width="120px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoaiPhong.TenLP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KHUVUC.TENKV)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Suasanpham", new { id = item.MaPhong }) |
+                @Html.ActionLink("Chi tiết", "Chitietsanpham", new { id = item.MaPhong }) |
+                @Html.ActionLink("Xóa", "Xoasanpham", new { id = item.MaPhong })
+            </td>
+        </tr>
+    }
+</table>
+@* Tao liên kết các trang  *@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("QLPhong", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

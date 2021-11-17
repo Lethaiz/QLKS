@@ -1,0 +1,54 @@
+﻿@using QLKS.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<QLKS.Models.LoaiPhong>
+
+@{
+    ViewBag.Title = "Loaiphong";
+    Layout = "~/Views/Admin/QuanLyLayout.cshtml";
+}
+
+
+
+<h2>Quản Lý Loại Phòng</h2>
+
+
+<p>
+    @Html.ActionLink("THÊM MỚI", "themloai")
+</p>
+<table class="table" border="1">
+    <tr>
+        <th style="width:200px">  Mã Loại </th>
+        <th style="width:100px">  Tên Loại  </th>
+
+        <th style="width:200px">  </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaLP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenLP)
+            </td>
+
+            <td>
+                @Html.ActionLink("Sửa", "Sualoai", new { id = item.MaLP }) |
+                @Html.ActionLink("Chi tiết", "chitietloai", new { id = item.MaLP }) |
+                @Html.ActionLink("Xóa", "xoaloai", new { id = item.MaLP })
+            </td>
+        </tr>
+    }
+</table>
+@* Tao liên kết các trang  *@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("Loaiphong", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>
