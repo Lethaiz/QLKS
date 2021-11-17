@@ -164,3 +164,7 @@ C:\Users\acer\Desktop\QLKS\QLKS\obj\Debug\QLKS.csproj.CopyComplete
 C:\Users\acer\Desktop\QLKS\QLKS\obj\Debug\QLKS.dll
 C:\Users\acer\Desktop\QLKS\QLKS\obj\Debug\QLKS.pdb
 C:\Users\acer\Desktop\QLKS\QLKS\obj\Debug\QLKS.csproj.AssemblyReference.cache
+C:\Users\acer\Desktop\QLKS\QLKS\bin\PagedList.dll
+C:\Users\acer\Desktop\QLKS\QLKS\bin\PagedList.Mvc.dll
+C:\Users\acer\Desktop\QLKS\QLKS\bin\PagedList.xml
+C:\Users\acer\Desktop\QLKS\QLKS\bin\PagedList.Mvc.xml

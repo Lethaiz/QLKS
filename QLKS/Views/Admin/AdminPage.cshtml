@@ -79,19 +79,19 @@
                                 <i class="fas fa-align-justify"></i>Dashboard
                             </a>
                             @*<ul class="list-unstyled navbar__sub-list js-sub-list">
-                                    <li>
-                                        <a href="index.html">Dashboard 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="index2.html">Dashboard 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="index3.html">Dashboard 3</a>
-                                    </li>
-                                    <li>
-                                        <a href="index4.html">Dashboard 4</a>
-                                    </li>
-                                </ul>*@
+                <li>
+                    <a href="index.html">Dashboard 1</a>
+                </li>
+                <li>
+                    <a href="index2.html">Dashboard 2</a>
+                </li>
+                <li>
+                    <a href="index3.html">Dashboard 3</a>
+                </li>
+                <li>
+                    <a href="index4.html">Dashboard 4</a>
+                </li>
+            </ul>*@
                         </li>
                         <li>
                             <a href="chart.html">
@@ -103,13 +103,27 @@
                                 <i class="fas fa-table"></i>Tables
                             </a>
                         </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tasks"></i>Quản Lý
                             </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                    <li>
+                                        <a href="@Url.Action("QLPhong","Admin")">Phòng</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("KhuVuc","QLKHUVUC")">Khu Vực</a>
+                                    </li>
+                                    <li>
+                                        <a href="index3.html">Loại Phòng</a>
+                                    </li>
+                                    <li>
+                                        <a href="index4.html">Dashboard 4</a>
+                                    </li>
+                                </ul>
                         </li>
                         <li>
-                            <a href="calendar.html">
+                            <a href="@Url.Action("DateTime","Admin")">
                                 <i class="fas fa-calendar-alt"></i>Calendar
                             </a>
                         </li>

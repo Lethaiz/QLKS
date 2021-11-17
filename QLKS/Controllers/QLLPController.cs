@@ -6,17 +6,12 @@ using System.Web.Mvc;
 
 namespace QLKS.Controllers
 {
-    public class HomePageController : Controller
+    public class QLLPController : Controller
     {
-        // GET: HomePage
+        // GET: QLLP
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult About()
-        {
-            return View();
-        }
-
     }
 }

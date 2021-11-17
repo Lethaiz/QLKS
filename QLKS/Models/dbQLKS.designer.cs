@@ -33,6 +33,9 @@ namespace QLKS.Models
     partial void InsertAdmin(Admin instance);
     partial void UpdateAdmin(Admin instance);
     partial void DeleteAdmin(Admin instance);
+    partial void InsertYkien(Ykien instance);
+    partial void UpdateYkien(Ykien instance);
+    partial void DeleteYkien(Ykien instance);
     partial void InsertChiTietHoaDon(ChiTietHoaDon instance);
     partial void UpdateChiTietHoaDon(ChiTietHoaDon instance);
     partial void DeleteChiTietHoaDon(ChiTietHoaDon instance);
@@ -45,6 +48,9 @@ namespace QLKS.Models
     partial void InsertKhachHang(KhachHang instance);
     partial void UpdateKhachHang(KhachHang instance);
     partial void DeleteKhachHang(KhachHang instance);
+    partial void InsertKHUVUC(KHUVUC instance);
+    partial void UpdateKHUVUC(KHUVUC instance);
+    partial void DeleteKHUVUC(KHUVUC instance);
     partial void InsertLoaiPhong(LoaiPhong instance);
     partial void UpdateLoaiPhong(LoaiPhong instance);
     partial void DeleteLoaiPhong(LoaiPhong instance);
@@ -54,9 +60,6 @@ namespace QLKS.Models
     partial void InsertPhong(Phong instance);
     partial void UpdatePhong(Phong instance);
     partial void DeletePhong(Phong instance);
-    partial void InsertYkien(Ykien instance);
-    partial void UpdateYkien(Ykien instance);
-    partial void DeleteYkien(Ykien instance);
     #endregion
 		
 		public dbQLKSDataContext() : 
@@ -97,6 +100,14 @@ namespace QLKS.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<Ykien> Ykiens
+		{
+			get
+			{
+				return this.GetTable<Ykien>();
+			}
+		}
+		
 		public System.Data.Linq.Table<ChiTietHoaDon> ChiTietHoaDons
 		{
 			get
@@ -129,6 +140,14 @@ namespace QLKS.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<KHUVUC> KHUVUCs
+		{
+			get
+			{
+				return this.GetTable<KHUVUC>();
+			}
+		}
+		
 		public System.Data.Linq.Table<LoaiPhong> LoaiPhongs
 		{
 			get
@@ -150,14 +169,6 @@ namespace QLKS.Models
 			get
 			{
 				return this.GetTable<Phong>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Ykien> Ykiens
-		{
-			get
-			{
-				return this.GetTable<Ykien>();
 			}
 		}
 	}
@@ -247,6 +258,116 @@ namespace QLKS.Models
 					this._HoTen = value;
 					this.SendPropertyChanged("HoTen");
 					this.OnHoTenChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Ykien")]
+	public partial class Ykien : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Makh;
+		
+		private string _Email;
+		
+		private string _Ykien1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMakhChanging(int value);
+    partial void OnMakhChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnYkien1Changing(string value);
+    partial void OnYkien1Changed();
+    #endregion
+		
+		public Ykien()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Makh", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Makh
+		{
+			get
+			{
+				return this._Makh;
+			}
+			set
+			{
+				if ((this._Makh != value))
+				{
+					this.OnMakhChanging(value);
+					this.SendPropertyChanging();
+					this._Makh = value;
+					this.SendPropertyChanged("Makh");
+					this.OnMakhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Ykien", Storage="_Ykien1", DbType="NVarChar(100)")]
+		public string Ykien1
+		{
+			get
+			{
+				return this._Ykien1;
+			}
+			set
+			{
+				if ((this._Ykien1 != value))
+				{
+					this.OnYkien1Changing(value);
+					this.SendPropertyChanging();
+					this._Ykien1 = value;
+					this.SendPropertyChanged("Ykien1");
+					this.OnYkien1Changed();
 				}
 			}
 		}
@@ -1244,6 +1365,120 @@ namespace QLKS.Models
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KHUVUC")]
+	public partial class KHUVUC : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MAKV;
+		
+		private string _TENKV;
+		
+		private EntitySet<Phong> _Phongs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMAKVChanging(int value);
+    partial void OnMAKVChanged();
+    partial void OnTENKVChanging(string value);
+    partial void OnTENKVChanged();
+    #endregion
+		
+		public KHUVUC()
+		{
+			this._Phongs = new EntitySet<Phong>(new Action<Phong>(this.attach_Phongs), new Action<Phong>(this.detach_Phongs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKV", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MAKV
+		{
+			get
+			{
+				return this._MAKV;
+			}
+			set
+			{
+				if ((this._MAKV != value))
+				{
+					this.OnMAKVChanging(value);
+					this.SendPropertyChanging();
+					this._MAKV = value;
+					this.SendPropertyChanged("MAKV");
+					this.OnMAKVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENKV", DbType="NChar(10)")]
+		public string TENKV
+		{
+			get
+			{
+				return this._TENKV;
+			}
+			set
+			{
+				if ((this._TENKV != value))
+				{
+					this.OnTENKVChanging(value);
+					this.SendPropertyChanging();
+					this._TENKV = value;
+					this.SendPropertyChanged("TENKV");
+					this.OnTENKVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHUVUC_Phong", Storage="_Phongs", ThisKey="MAKV", OtherKey="MAKV")]
+		public EntitySet<Phong> Phongs
+		{
+			get
+			{
+				return this._Phongs;
+			}
+			set
+			{
+				this._Phongs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Phongs(Phong entity)
+		{
+			this.SendPropertyChanging();
+			entity.KHUVUC = this;
+		}
+		
+		private void detach_Phongs(Phong entity)
+		{
+			this.SendPropertyChanging();
+			entity.KHUVUC = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiPhong")]
 	public partial class LoaiPhong : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1480,6 +1715,8 @@ namespace QLKS.Models
 		
 		private int _MaPhong;
 		
+		private System.Nullable<int> _MAKV;
+		
 		private System.Nullable<int> _MaLP;
 		
 		private System.Nullable<decimal> _GiaPhong;
@@ -1488,7 +1725,11 @@ namespace QLKS.Models
 		
 		private string _Mota;
 		
+		private string _ANH;
+		
 		private EntitySet<ChiTietHoaDon> _ChiTietHoaDons;
+		
+		private EntityRef<KHUVUC> _KHUVUC;
 		
 		private EntityRef<LoaiPhong> _LoaiPhong;
 		
@@ -1498,6 +1739,8 @@ namespace QLKS.Models
     partial void OnCreated();
     partial void OnMaPhongChanging(int value);
     partial void OnMaPhongChanged();
+    partial void OnMAKVChanging(System.Nullable<int> value);
+    partial void OnMAKVChanged();
     partial void OnMaLPChanging(System.Nullable<int> value);
     partial void OnMaLPChanged();
     partial void OnGiaPhongChanging(System.Nullable<decimal> value);
@@ -1506,11 +1749,14 @@ namespace QLKS.Models
     partial void OnSoPhongChanged();
     partial void OnMotaChanging(string value);
     partial void OnMotaChanged();
+    partial void OnANHChanging(string value);
+    partial void OnANHChanged();
     #endregion
 		
 		public Phong()
 		{
 			this._ChiTietHoaDons = new EntitySet<ChiTietHoaDon>(new Action<ChiTietHoaDon>(this.attach_ChiTietHoaDons), new Action<ChiTietHoaDon>(this.detach_ChiTietHoaDons));
+			this._KHUVUC = default(EntityRef<KHUVUC>);
 			this._LoaiPhong = default(EntityRef<LoaiPhong>);
 			OnCreated();
 		}
@@ -1531,6 +1777,30 @@ namespace QLKS.Models
 					this._MaPhong = value;
 					this.SendPropertyChanged("MaPhong");
 					this.OnMaPhongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKV", DbType="Int")]
+		public System.Nullable<int> MAKV
+		{
+			get
+			{
+				return this._MAKV;
+			}
+			set
+			{
+				if ((this._MAKV != value))
+				{
+					if (this._KHUVUC.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMAKVChanging(value);
+					this.SendPropertyChanging();
+					this._MAKV = value;
+					this.SendPropertyChanged("MAKV");
+					this.OnMAKVChanged();
 				}
 			}
 		}
@@ -1619,6 +1889,26 @@ namespace QLKS.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANH", DbType="VarChar(50)")]
+		public string ANH
+		{
+			get
+			{
+				return this._ANH;
+			}
+			set
+			{
+				if ((this._ANH != value))
+				{
+					this.OnANHChanging(value);
+					this.SendPropertyChanging();
+					this._ANH = value;
+					this.SendPropertyChanged("ANH");
+					this.OnANHChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Phong_ChiTietHoaDon", Storage="_ChiTietHoaDons", ThisKey="MaPhong", OtherKey="MaPhong")]
 		public EntitySet<ChiTietHoaDon> ChiTietHoaDons
 		{
@@ -1629,6 +1919,40 @@ namespace QLKS.Models
 			set
 			{
 				this._ChiTietHoaDons.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHUVUC_Phong", Storage="_KHUVUC", ThisKey="MAKV", OtherKey="MAKV", IsForeignKey=true)]
+		public KHUVUC KHUVUC
+		{
+			get
+			{
+				return this._KHUVUC.Entity;
+			}
+			set
+			{
+				KHUVUC previousValue = this._KHUVUC.Entity;
+				if (((previousValue != value) 
+							|| (this._KHUVUC.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._KHUVUC.Entity = null;
+						previousValue.Phongs.Remove(this);
+					}
+					this._KHUVUC.Entity = value;
+					if ((value != null))
+					{
+						value.Phongs.Add(this);
+						this._MAKV = value.MAKV;
+					}
+					else
+					{
+						this._MAKV = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("KHUVUC");
+				}
 			}
 		}
 		
@@ -1696,116 +2020,6 @@ namespace QLKS.Models
 		{
 			this.SendPropertyChanging();
 			entity.Phong = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Ykien")]
-	public partial class Ykien : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Makh;
-		
-		private string _Email;
-		
-		private string _Ykien1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMakhChanging(int value);
-    partial void OnMakhChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnYkien1Changing(string value);
-    partial void OnYkien1Changed();
-    #endregion
-		
-		public Ykien()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Makh", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Makh
-		{
-			get
-			{
-				return this._Makh;
-			}
-			set
-			{
-				if ((this._Makh != value))
-				{
-					this.OnMakhChanging(value);
-					this.SendPropertyChanging();
-					this._Makh = value;
-					this.SendPropertyChanged("Makh");
-					this.OnMakhChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(50)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Ykien", Storage="_Ykien1", DbType="NVarChar(100)")]
-		public string Ykien1
-		{
-			get
-			{
-				return this._Ykien1;
-			}
-			set
-			{
-				if ((this._Ykien1 != value))
-				{
-					this.OnYkien1Changing(value);
-					this.SendPropertyChanging();
-					this._Ykien1 = value;
-					this.SendPropertyChanged("Ykien1");
-					this.OnYkien1Changed();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 }

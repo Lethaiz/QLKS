@@ -52,6 +52,12 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
@@ -132,6 +138,9 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
+    <Compile Include="Controllers\QLKHUVUCController.cs" />
+    <Compile Include="Controllers\QLLPController.cs" />
+    <Compile Include="Controllers\QLPHONGController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -169,6 +178,8 @@
     <Content Include="Content\CSS\hamburgers.min.css" />
     <Content Include="Content\CSS\main.css" />
     <Content Include="Content\CSS\select2.min.css" />
+    <Content Include="Content\IMG\dalat.png" />
+    <Content Include="Content\IMG\hanoi.png" />
     <Content Include="Content\IMG\icon\icon-email.png" />
     <Content Include="Content\IMG\icon\icon-next.png" />
     <Content Include="Content\IMG\icon\icon-pay-01.png" />
@@ -178,6 +189,10 @@
     <Content Include="Content\IMG\icon\icon-pay-05.png" />
     <Content Include="Content\IMG\icon\icon-prev.png" />
     <Content Include="Content\IMG\icon\logo.png" />
+    <Content Include="Content\IMG\nhatrang.png" />
+    <Content Include="Content\IMG\phanthiet.png" />
+    <Content Include="Content\IMG\saigon.png" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="fonts\font-awesome.min.css" />
     <Content Include="fonts\icon-font.min.css" />
     <Content Include="fonts\material-design-iconic-font.min.css" />
@@ -278,9 +293,20 @@
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\DateLayout.cshtml" />
     <Content Include="Views\Admin\DateTime.cshtml" />
+    <Content Include="Views\HomePage\About.cshtml" />
+    <Content Include="Views\Shared\AboutPage.cshtml" />
+    <Content Include="Views\Admin\QuanLyLayout.cshtml" />
+    <Content Include="Views\Admin\QLPhong.cshtml" />
+    <Content Include="Views\QLKHUVUC\Create.cshtml" />
+    <Content Include="Views\QLKHUVUC\KhuVuc.cshtml" />
+    <Content Include="Views\QLKHUVUC\Details.cshtml" />
+    <Content Include="Views\QLKHUVUC\Delete.cshtml" />
+    <Content Include="Views\QLKHUVUC\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\QLLP\" />
+    <Folder Include="Views\QLPHONG\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
