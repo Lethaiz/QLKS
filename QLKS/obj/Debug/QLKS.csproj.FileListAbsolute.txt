@@ -139,6 +139,8 @@ C:\Users\acer\Desktop\QLKS\QLKS\bin\EntityFramework.SqlServer.dll
 C:\Users\acer\Desktop\QLKS\QLKS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\acer\Desktop\QLKS\QLKS\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\acer\Desktop\QLKS\QLKS\bin\Newtonsoft.Json.dll
+C:\Users\acer\Desktop\QLKS\QLKS\bin\PagedList.dll
+C:\Users\acer\Desktop\QLKS\QLKS\bin\PagedList.Mvc.dll
 C:\Users\acer\Desktop\QLKS\QLKS\bin\System.Web.Helpers.dll
 C:\Users\acer\Desktop\QLKS\QLKS\bin\System.Web.Mvc.dll
 C:\Users\acer\Desktop\QLKS\QLKS\bin\System.Web.Optimization.dll
@@ -149,6 +151,8 @@ C:\Users\acer\Desktop\QLKS\QLKS\bin\System.Web.WebPages.Razor.dll
 C:\Users\acer\Desktop\QLKS\QLKS\bin\WebGrease.dll
 C:\Users\acer\Desktop\QLKS\QLKS\bin\EntityFramework.xml
 C:\Users\acer\Desktop\QLKS\QLKS\bin\EntityFramework.SqlServer.xml
+C:\Users\acer\Desktop\QLKS\QLKS\bin\PagedList.xml
+C:\Users\acer\Desktop\QLKS\QLKS\bin\PagedList.Mvc.xml
 C:\Users\acer\Desktop\QLKS\QLKS\bin\System.Web.Helpers.xml
 C:\Users\acer\Desktop\QLKS\QLKS\bin\System.Web.Mvc.xml
 C:\Users\acer\Desktop\QLKS\QLKS\bin\System.Web.Optimization.xml
@@ -164,7 +168,3 @@ C:\Users\acer\Desktop\QLKS\QLKS\obj\Debug\QLKS.csproj.CopyComplete
 C:\Users\acer\Desktop\QLKS\QLKS\obj\Debug\QLKS.dll
 C:\Users\acer\Desktop\QLKS\QLKS\obj\Debug\QLKS.pdb
 C:\Users\acer\Desktop\QLKS\QLKS\obj\Debug\QLKS.csproj.AssemblyReference.cache
-C:\Users\acer\Desktop\QLKS\QLKS\bin\PagedList.dll
-C:\Users\acer\Desktop\QLKS\QLKS\bin\PagedList.Mvc.dll
-C:\Users\acer\Desktop\QLKS\QLKS\bin\PagedList.xml
-C:\Users\acer\Desktop\QLKS\QLKS\bin\PagedList.Mvc.xml

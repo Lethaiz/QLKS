@@ -1,0 +1,74 @@
+﻿@model QLKS.Models.Phong
+
+@{
+    ViewBag.Title = "Xoa";
+    Layout = "~/Views/Admin/QuanLyLayout.cshtml";
+}
+
+<h3>Bạn Thật Sự Mún Xóa ?</h3>
+<div>
+    <h4>Phong</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Khu Vực:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAKV)
+        </dd>
+
+        <dt>
+            Mã Loại Phòng:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLP)
+        </dd>
+
+        <dt>
+            Giá Phòng:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaPhong)
+        </dd>
+
+        <dt>
+            Số Phòng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoPhong)
+        </dd>
+
+        <dt>
+            Mô Tả:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+        <dt>
+            Ảnh Review:
+        </dt>
+        <dd>
+            <img src="@Url.Content("~/Content/img/"+  Model.ANH)" width="120px" />
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Delete" class="btn btn-default" /> |
+    <div>
+        @Html.ActionLink("Trở Về", "QLPHONG")
+    </div>
+
+</div>
+    }
+</div>

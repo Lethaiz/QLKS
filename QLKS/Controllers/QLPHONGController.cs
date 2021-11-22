@@ -30,7 +30,7 @@ namespace QLKS.Controllers
             }
 
         }
-        public ActionResult ThemmoiSanpham()
+        public ActionResult Themmoi()
         {
             if (Session["Taikhoanadmin"] == null)
             {
@@ -39,18 +39,18 @@ namespace QLKS.Controllers
             }
             else
             {
-                ViewBag.MALOAI = new SelectList(data.LoaiPhongs.ToList().OrderBy(n => n.TenLP), "MALOAI", "TENLOAI");
-                ViewBag.MAKHVUC = new SelectList(data.KHUVUCs.ToList().OrderBy(n => n.TENKV), "MAKHVUC", "TENKV");
+                ViewBag.LoaiPhong = new SelectList(data.LoaiPhongs.ToList().OrderBy(n => n.TenLP), "MALP", "TenLP");
+                ViewBag.MAKHVUC = new SelectList(data.KHUVUCs.ToList().OrderBy(n => n.TENKV), "MAKV", "TENKV");
                 return View();
             }
         }
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult ThemmoiSanpham(Phong p, HttpPostedFileBase fileUpload)
+        public ActionResult Themmoi(Phong p, HttpPostedFileBase fileUpload)
         {
             //Dua du lieu vao dropdownload
-            ViewBag.MALOAI = new SelectList(data.LoaiPhongs.ToList().OrderBy(n => n.TenLP), "MALOAI", "TENLOAI");
-            ViewBag.MAKHVUC = new SelectList(data.KHUVUCs.ToList().OrderBy(n => n.TENKV), "MAKHVUC", "TENKV");
+            ViewBag.LoaiPhong = new SelectList(data.LoaiPhongs.ToList().OrderBy(n => n.TenLP), "MALP", "TenLP");
+            ViewBag.MAKHVUC = new SelectList(data.KHUVUCs.ToList().OrderBy(n => n.TENKV), "MAKV", "TENKV");
             //Kiem tra duong dan file
             if (fileUpload == null)
             {
@@ -63,7 +63,7 @@ namespace QLKS.Controllers
                 if (ModelState.IsValid)
                 {
                     var fileName = Path.GetFileName(fileUpload.FileName);
-                    var path = Path.Combine(Server.MapPath("~/Content/img"), fileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/IMG"), fileName);
                     if (System.IO.File.Exists(path))
                         ViewBag.Thongbao = "Hình ảnh đã tồn tại";
                     else
@@ -79,7 +79,7 @@ namespace QLKS.Controllers
         }
 
         //Hiển thị sản phẩm
-        public ActionResult ChitietSanpham(int id)
+        public ActionResult Chitiet(int id)
         {
             if (Session["Taikhoanadmin"] == null)
             {
@@ -102,7 +102,7 @@ namespace QLKS.Controllers
 
         //Xóa sản phẩm
         [HttpGet]
-        public ActionResult XoaSanpham(int id)
+        public ActionResult Xoa(int id)
         {
             if (Session["Taikhoanadmin"] == null)
             {
@@ -124,7 +124,7 @@ namespace QLKS.Controllers
         }
 
 
-        [HttpPost, ActionName("XoaSanpham")]
+        [HttpPost, ActionName("Xoa")]
         public ActionResult Xacnhanxoa(int id)
         {
             if (Session["Taikhoanadmin"] == null)
@@ -149,7 +149,7 @@ namespace QLKS.Controllers
         }
         //Chinh sửa sản phẩm
         [HttpGet]
-        public ActionResult Suasanpham(int id)
+        public ActionResult Sua(int id)
         {
             if (Session["Taikhoanadmin"] == null)
             {
@@ -166,15 +166,14 @@ namespace QLKS.Controllers
                     Response.StatusCode = 404;
                     return null;
                 }
-
-                ViewBag.MALOAI = new SelectList(data.LoaiPhongs.ToList().OrderBy(n => n.TenLP), "MALOAI", "TENLOAI");
-                ViewBag.MAKHVUC = new SelectList(data.KHUVUCs.ToList().OrderBy(n => n.TENKV), "MAKHVUC", "TENKV");
+                ViewBag.LoaiPhong = new SelectList(data.LoaiPhongs.ToList().OrderBy(n => n.TenLP), "MALP", "TenLP");
+                ViewBag.MAKHVUC = new SelectList(data.KHUVUCs.ToList().OrderBy(n => n.TENKV), "MAKV", "TENKV");
                 return View(sp);
             }
         }
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Suasanpham(int id, HttpPostedFileBase fileUpload)
+        public ActionResult Sua(int id, HttpPostedFileBase fileUpload)
         {
             if (Session["Taikhoanadmin"] == null)
             {
@@ -183,9 +182,8 @@ namespace QLKS.Controllers
             }
             else
             {
-                //Dua du lieu vao dropdownload
-                ViewBag.MALOAI = new SelectList(data.LoaiPhongs.ToList().OrderBy(n => n.TenLP), "MALOAI", "TENLOAI");
-                ViewBag.MAKHVUC = new SelectList(data.KHUVUCs.ToList().OrderBy(n => n.TENKV), "MAKHVUC", "TENKV");
+                ViewBag.LoaiPhong = new SelectList(data.LoaiPhongs.ToList().OrderBy(n => n.TenLP), "MALP", "TenLP");
+                ViewBag.MAKHVUC = new SelectList(data.KHUVUCs.ToList().OrderBy(n => n.TENKV), "MAKV", "TENKV");
                 //Kiem tra duong dan file
                 if (fileUpload == null)
                 {
@@ -201,7 +199,7 @@ namespace QLKS.Controllers
                         //Luu ten fie, luu y bo sung thu vien using System.IO;
                         var fileName = Path.GetFileName(fileUpload.FileName);
                         //Luu duong dan cua file
-                        var path = Path.Combine(Server.MapPath("~/Content/img"), fileName);
+                        var path = Path.Combine(Server.MapPath("~/Content/IMG"), fileName);
                         //Kiem tra hình anh ton tai chua?
                         if (System.IO.File.Exists(path))
                             ViewBag.Thongbao = "Hình ảnh đã tồn tại";

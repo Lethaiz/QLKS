@@ -5,10 +5,10 @@
     Layout = "~/Views/Admin/QuanLyLayout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Chi Tiết Khu Vực</h2>
 
 <div>
-    <h4>KHUVUC</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -19,9 +19,20 @@
             @Html.DisplayFor(model => model.TENKV)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.ANH)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/Content/img/"+  Model.ANH)" width="120px" />
+        </dd>
+
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.MAKV }) |
-    @Html.ActionLink("Back to List", "Index")
+    <div>
+        @Html.ActionLink("Trở Về", "KhuVuc")
+    </div>
+
 </p>

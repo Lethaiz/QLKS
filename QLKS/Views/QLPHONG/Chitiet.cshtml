@@ -1,0 +1,69 @@
+﻿@model QLKS.Models.Phong
+
+@{
+    ViewBag.Title = "Chitiet";
+    Layout = "~/Views/Admin/QuanLyLayout.cshtml";
+}
+
+<h2>Chi Tiết Phòng </h2>
+
+<div>
+ 
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+         Mã Khu Vực:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAKV)
+        </dd>
+
+        <dt>
+           Mã Loại Phòng:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLP)
+        </dd>
+
+        <dt>
+          Giá Phòng:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaPhong)
+        </dd>
+
+        <dt>
+            Số Phòng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoPhong)
+        </dd>
+
+        <dt>
+            Mô Tả:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+        <dt>
+          Ảnh Review:
+        </dt>
+        <dd>
+            <img src="@Url.Content("~/Content/img/"+  Model.ANH)" width="120px" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaPhong }) |
+    <div>
+        @Html.ActionLink("Trở Về", "QLPHONG")
+    </div>
+
+</p>

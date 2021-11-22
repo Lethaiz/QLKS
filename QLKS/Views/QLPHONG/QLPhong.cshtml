@@ -8,11 +8,11 @@
 }
 
 
-<h2>Quản Lý Thông Tin Phong</h2>
+<h2>Quản Lý Thông Tin Phòng</h2>
 
 
 <p>
-    @Html.ActionLink("THÊM MỚI", "Themmoisanpham")
+    @Html.ActionLink("THÊM MỚI", "Themmoi")
 </p>
 <table class="table" border="1">
     <tr>
@@ -22,7 +22,7 @@
         <th style="width:120px">  Ảnh  </th>
         <th style="width:200px">  Loại Phòng </th>
         <th style="width:100px">  Khu vực  </th>
-        <th style="width:200px">  </th>
+        <th style="width:200px"> Thanh Công Cụ </th>
     </tr>
 
     @foreach (var item in Model)
@@ -47,9 +47,9 @@
                 @Html.DisplayFor(modelItem => item.KHUVUC.TENKV)
             </td>
             <td>
-                @Html.ActionLink("Sửa", "Suasanpham", new { id = item.MaPhong }) |
-                @Html.ActionLink("Chi tiết", "Chitietsanpham", new { id = item.MaPhong }) |
-                @Html.ActionLink("Xóa", "Xoasanpham", new { id = item.MaPhong })
+                @Html.ActionLink("Sửa", "Sua", new { id = item.MaPhong }) |
+                @Html.ActionLink("Chi tiết", "Chitiet", new { id = item.MaPhong }) |
+                @Html.ActionLink("Xóa", "Xoa", new { id = item.MaPhong })
             </td>
         </tr>
     }

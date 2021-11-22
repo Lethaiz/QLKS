@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using System.IO;
+
 namespace QLKS.Controllers
 {
     public class QLKHUVUCController : Controller
@@ -38,26 +40,50 @@ namespace QLKS.Controllers
         }
         //3. Thêm mới Nhà xuất bản
         [HttpGet]
-        public ActionResult Create()
+        public ActionResult taomoi()
         {
             if (Session["Taikhoanadmin"] == null)
+            {
                 return RedirectToAction("Login", "Admin");
-            else
-                return View();
-        }
-        [HttpPost]
-        public ActionResult Create(KHUVUC kv)
-        {
-            if (Session["Taikhoanadmin"] == null)
-                return RedirectToAction("Login", "Admin");
+
+            }
             else
             {
-                data.KHUVUCs.InsertOnSubmit(kv);
-                data.SubmitChanges();
-
-                return RedirectToAction("KhuVuc", "QLKHUVUC");
+                return View();
             }
         }
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult taomoi(KHUVUC p, HttpPostedFileBase fileUpload)
+        {
+            //Dua du lieu vao dropdownload
+            //Kiem tra duong dan file
+            if (fileUpload == null)
+            {
+                ViewBag.Thongbao = "Vui lòng chọn ảnh bìa";
+                return View();
+            }
+            //Them vao CSDL
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    var fileName = Path.GetFileName(fileUpload.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/IMG"), fileName);
+                    if (System.IO.File.Exists(path))
+                        ViewBag.Thongbao = "Hình ảnh đã tồn tại";
+                    else
+                    {
+                        fileUpload.SaveAs(path);
+                    }
+                    p.ANH = fileName;
+                    data.KHUVUCs.InsertOnSubmit(p);
+                    data.SubmitChanges();
+                }
+                return RedirectToAction("KhuVuc");
+            }
+        }
+
         [HttpGet]
         public ActionResult Delete(int id)
         {

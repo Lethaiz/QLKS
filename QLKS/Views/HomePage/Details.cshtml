@@ -1,0 +1,67 @@
+﻿@model QLKS.Models.Phong
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutThanhvien.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Phong</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MAKV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAKV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaLP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaPhong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoPhong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaPhong }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

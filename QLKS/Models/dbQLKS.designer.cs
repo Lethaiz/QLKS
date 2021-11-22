@@ -1375,6 +1375,8 @@ namespace QLKS.Models
 		
 		private string _TENKV;
 		
+		private string _ANH;
+		
 		private EntitySet<Phong> _Phongs;
 		
     #region Extensibility Method Definitions
@@ -1385,6 +1387,8 @@ namespace QLKS.Models
     partial void OnMAKVChanged();
     partial void OnTENKVChanging(string value);
     partial void OnTENKVChanged();
+    partial void OnANHChanging(string value);
+    partial void OnANHChanged();
     #endregion
 		
 		public KHUVUC()
@@ -1429,6 +1433,26 @@ namespace QLKS.Models
 					this._TENKV = value;
 					this.SendPropertyChanged("TENKV");
 					this.OnTENKVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANH", DbType="VarChar(50)")]
+		public string ANH
+		{
+			get
+			{
+				return this._ANH;
+			}
+			set
+			{
+				if ((this._ANH != value))
+				{
+					this.OnANHChanging(value);
+					this.SendPropertyChanging();
+					this._ANH = value;
+					this.SendPropertyChanged("ANH");
+					this.OnANHChanged();
 				}
 			}
 		}

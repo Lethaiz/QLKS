@@ -1,0 +1,9 @@
+﻿
+@model IEnumerable<QLKS.Models.LoaiPhong>
+
+
+
+@foreach (var item in Model)
+{
+    <a href="@Url.Action("SptheoLoai","HomePage",new { id = item.MaLP })"> @item.TenLP </a>
+}

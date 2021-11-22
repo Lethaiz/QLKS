@@ -136,7 +136,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\QLKHUVUCController.cs" />
     <Compile Include="Controllers\QLLPController.cs" />
@@ -181,6 +180,8 @@
     <Content Include="Content\IMG\dalat.png" />
     <Content Include="Content\IMG\hanoi.png" />
     <Content Include="Content\IMG\icon\icon-email.png" />
+    <Content Include="Content\IMG\icon\icon-heart-01.png" />
+    <Content Include="Content\IMG\icon\icon-heart-02.png" />
     <Content Include="Content\IMG\icon\icon-next.png" />
     <Content Include="Content\IMG\icon\icon-pay-01.png" />
     <Content Include="Content\IMG\icon\icon-pay-02.png" />
@@ -191,6 +192,7 @@
     <Content Include="Content\IMG\icon\logo.png" />
     <Content Include="Content\IMG\nhatrang.png" />
     <Content Include="Content\IMG\phanthiet.png" />
+    <Content Include="Content\IMG\rapxiec1.png" />
     <Content Include="Content\IMG\saigon.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="fonts\font-awesome.min.css" />
@@ -266,11 +268,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\HomePage\Index.cshtml" />
     <Content Include="Views\Shared\_HomePage.cshtml" />
     <Content Include="Views\Shared\_LayoutThanhvien.cshtml" />
@@ -278,7 +275,6 @@
     <Content Include="Views\User\Dangnhap.cshtml" />
     <Content Include="Views\Shared\_LayoutLienhe.cshtml" />
     <Content Include="Views\Lienhe\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
     <Content Include="Views\User\Quenmatkhau.cshtml" />
     <Content Include="Views\User\ResetPassword.cshtml" />
     <Content Include="Views\User\Registration.cshtml" />
@@ -307,6 +303,22 @@
     <Content Include="Views\QLLP\xoaloai.cshtml" />
     <Content Include="Views\QLLP\Sualoai.cshtml" />
     <Content Include="Views\QLPHONG\QLPhong.cshtml" />
+    <Content Include="Views\QLPHONG\Themmoi.cshtml" />
+    <Content Include="Views\QLPHONG\Chitiet.cshtml" />
+    <Content Include="Views\QLPHONG\Xoa.cshtml" />
+    <Content Include="Views\QLPHONG\Sua.cshtml" />
+    <Content Include="Views\Shared\LayoutPage.cshtml" />
+    <Content Include="Views\HomePage\Chitiet.cshtml" />
+    <Content Include="Views\Shared\ChiTiet.cshtml" />
+    <Content Include="Views\HomePage\Details.cshtml" />
+    <Content Include="Views\HomePage\Loai.cshtml" />
+    <Content Include="Views\HomePage\Sptheoloai.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage2.cshtml" />
+    <Content Include="Views\HomePage\KhuVuc.cshtml" />
+    <Content Include="Views\HomePage\SPTheoKV.cshtml" />
+    <Content Include="Views\HomePage\KV.cshtml" />
+    <Content Include="Views\QLKHUVUC\Themmoi.cshtml" />
+    <Content Include="Views\QLKHUVUC\taomoi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

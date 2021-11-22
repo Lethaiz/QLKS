@@ -7,7 +7,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/5e048f8ada.js" crossorigin="anonymous"></script>
-
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="~/Content/IMG/favicon.png" />
     <!--===============================================================================================-->
@@ -41,6 +40,133 @@
 </head>
 
 <body class="animsition">
+
+    <style>
+        .fb-livechat, .fb-widget {
+            display: none
+        }
+
+        .ctrlq.fb-button, .ctrlq.fb-close {
+            position: fixed;
+            right: 10px;
+            cursor: pointer
+        }
+
+        .ctrlq.fb-button {
+            z-index: 999;
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEyOCAxMjgiIGhlaWdodD0iMTI4cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiB3aWR0aD0iMTI4cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxyZWN0IGZpbGw9IiMwMDg0RkYiIGhlaWdodD0iMTI4IiB3aWR0aD0iMTI4Ii8+PC9nPjxwYXRoIGQ9Ik02NCwxNy41MzFjLTI1LjQwNSwwLTQ2LDE5LjI1OS00Niw0My4wMTVjMCwxMy41MTUsNi42NjUsMjUuNTc0LDE3LjA4OSwzMy40NnYxNi40NjIgIGwxNS42OTgtOC43MDdjNC4xODYsMS4xNzEsOC42MjEsMS44LDEzLjIxMywxLjhjMjUuNDA1LDAsNDYtMTkuMjU4LDQ2LTQzLjAxNUMxMTAsMzYuNzksODkuNDA1LDE3LjUzMSw2NCwxNy41MzF6IE02OC44NDUsNzUuMjE0ICBMNTYuOTQ3LDYyLjg1NUwzNC4wMzUsNzUuNTI0bDI1LjEyLTI2LjY1N2wxMS44OTgsMTIuMzU5bDIyLjkxLTEyLjY3TDY4Ljg0NSw3NS4yMTR6IiBmaWxsPSIjRkZGRkZGIiBpZD0iQnViYmxlX1NoYXBlIi8+PC9zdmc+) center no-repeat #0084ff;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            bottom: 40px;
+            border: 0;
+            outline: 0;
+            border-radius: 60px;
+            -webkit-border-radius: 60px;
+            -moz-border-radius: 60px;
+            -ms-border-radius: 60px;
+            -o-border-radius: 60px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, .06), 0 2px 32px rgba(0, 0, 0, .16);
+            -webkit-transition: box-shadow .2s ease;
+            background-size: 80%;
+            transition: all .2s ease-in-out
+        }
+
+            .ctrlq.fb-button:focus, .ctrlq.fb-button:hover {
+                transform: scale(1.1);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, .09), 0 4px 40px rgba(0, 0, 0, .24)
+            }
+
+        .fb-widget {
+            background: #fff;
+            z-index: 1000;
+            position: fixed;
+            width: 360px;
+            height: 435px;
+            overflow: hidden;
+            opacity: 0;
+            bottom: 0;
+            right: 24px;
+            border-radius: 6px;
+            -o-border-radius: 6px;
+            -webkit-border-radius: 6px;
+            box-shadow: 0 5px 40px rgba(0, 0, 0, .16);
+            -webkit-box-shadow: 0 5px 40px rgba(0, 0, 0, .16);
+            -moz-box-shadow: 0 5px 40px rgba(0, 0, 0, .16);
+            -o-box-shadow: 0 5px 40px rgba(0, 0, 0, .16)
+        }
+
+        .fb-credit {
+            text-align: center;
+            margin-top: 8px
+        }
+
+            .fb-credit a {
+                transition: none;
+                color: #bec2c9;
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 12px;
+                text-decoration: none;
+                border: 0;
+                font-weight: 400
+            }
+
+        .ctrlq.fb-overlay {
+            z-index: 0;
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            -webkit-transition: opacity .4s, visibility .4s;
+            transition: opacity .4s, visibility .4s;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .05);
+            display: none
+        }
+
+        .ctrlq.fb-close {
+            z-index: 4;
+            padding: 0 6px;
+            background: #365899;
+            font-weight: 700;
+            font-size: 11px;
+            color: #fff;
+            margin: 8px;
+            border-radius: 3px
+        }
+
+            .ctrlq.fb-close::after {
+                content: "X";
+                font-family: sans-serif
+            }
+
+        .bubble {
+            width: 20px;
+            height: 20px;
+            background: #c00;
+            color: #fff;
+            position: absolute;
+            z-index: 999999999;
+            text-align: center;
+            vertical-align: middle;
+            top: -2px;
+            left: -5px;
+            border-radius: 50%;
+        }
+
+        .bubble-msg {
+            width: 120px;
+            left: -140px;
+            top: 5px;
+            position: relative;
+            background: rgba(59, 89, 152, .8);
+            color: #fff;
+            padding: 5px 8px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 13px;
+        }
+    </style>
     <!-- ==================================HOME================================================ -->
     <!-- ======================================= HOME 02 ================================= -->
     <!-- ======================================= HOME 03 ================================= -->
@@ -69,19 +195,18 @@
                             </li>
 
                             <li>
-                                <a href="product.html">Room</a>
+                                <a href="@Url.Action("Index","HomePage")">Room</a>
                             </li>
 
                             <li class="label1" data-label1="hot">
                                 <a href="shoping-cart.html">Features</a>
                             </li>
-                            <li><a href="@Url.Action("Dangnhap","User")">Tài Khoản</a></li>
-                            <li>
-                                <a href="blog.html">Blog</a>
-                            </li>
 
                             <li>
-                                <a href="@Url.Action("About","Homepage")">About</a>
+                            <li><a href="@Url.Action("Dangnhap","User")">Tài Khoản </a></li>
+
+                            <li>
+                                <a href="@Url.Action("About","HomePage")">Về Chúng Tôi</a>
                             </li>
 
                             <li>
@@ -91,7 +216,7 @@
                     </div>
 
                     <!-- Icon header -->
-                    
+
                 </nav>
             </div>
         </div>
@@ -227,137 +352,65 @@
 
                 <div class="sidebar-gallery w-full p-tb-30">
                     <span class="mtext-101 cl5">
-                      
+                        @*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*@
+
                     </span>
 
+                    <div class="flex-w flex-sb p-t-36 gallery-lb">
+                        <!-- item gallery sidebar -->
+                        <div class="wrap-item-gallery m-b-10">
+                            <a class="item-gallery bg-img1" href="images/gallery-01.jpg" data-lightbox="gallery"
+                               style="background-image: url('images/gallery-01.jpg');"></a>
+                        </div>
 
-                    <style>
-                        .fb-livechat, .fb-widget {
-                            display: none
-                        }
+                        <!-- item gallery sidebar -->
+                        <div class="wrap-item-gallery m-b-10">
+                            <a class="item-gallery bg-img1" href="images/gallery-02.jpg" data-lightbox="gallery"
+                               style="background-image: url('images/gallery-02.jpg');"></a>
+                        </div>
 
-                        .ctrlq.fb-button, .ctrlq.fb-close {
-                            position: fixed;
-                            right: 10px;
-                            cursor: pointer
-                        }
+                        <!-- item gallery sidebar -->
+                        <div class="wrap-item-gallery m-b-10">
+                            <a class="item-gallery bg-img1" href="images/gallery-03.jpg" data-lightbox="gallery"
+                               style="background-image: url('images/gallery-03.jpg');"></a>
+                        </div>
 
-                        .ctrlq.fb-button {
-                            z-index: 999;
-                            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEyOCAxMjgiIGhlaWdodD0iMTI4cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiB3aWR0aD0iMTI4cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxyZWN0IGZpbGw9IiMwMDg0RkYiIGhlaWdodD0iMTI4IiB3aWR0aD0iMTI4Ii8+PC9nPjxwYXRoIGQ9Ik02NCwxNy41MzFjLTI1LjQwNSwwLTQ2LDE5LjI1OS00Niw0My4wMTVjMCwxMy41MTUsNi42NjUsMjUuNTc0LDE3LjA4OSwzMy40NnYxNi40NjIgIGwxNS42OTgtOC43MDdjNC4xODYsMS4xNzEsOC42MjEsMS44LDEzLjIxMywxLjhjMjUuNDA1LDAsNDYtMTkuMjU4LDQ2LTQzLjAxNUMxMTAsMzYuNzksODkuNDA1LDE3LjUzMSw2NCwxNy41MzF6IE02OC44NDUsNzUuMjE0ICBMNTYuOTQ3LDYyLjg1NUwzNC4wMzUsNzUuNTI0bDI1LjEyLTI2LjY1N2wxMS44OTgsMTIuMzU5bDIyLjkxLTEyLjY3TDY4Ljg0NSw3NS4yMTR6IiBmaWxsPSIjRkZGRkZGIiBpZD0iQnViYmxlX1NoYXBlIi8+PC9zdmc+) center no-repeat #0084ff;
-                            width: 60px;
-                            height: 60px;
-                            text-align: center;
-                            bottom: 40px;
-                            border: 0;
-                            outline: 0;
-                            border-radius: 60px;
-                            -webkit-border-radius: 60px;
-                            -moz-border-radius: 60px;
-                            -ms-border-radius: 60px;
-                            -o-border-radius: 60px;
-                            box-shadow: 0 1px 6px rgba(0, 0, 0, .06), 0 2px 32px rgba(0, 0, 0, .16);
-                            -webkit-transition: box-shadow .2s ease;
-                            background-size: 80%;
-                            transition: all .2s ease-in-out
-                        }
+                        <!-- item gallery sidebar -->
+                        <div class="wrap-item-gallery m-b-10">
+                            <a class="item-gallery bg-img1" href="images/gallery-04.jpg" data-lightbox="gallery"
+                               style="background-image: url('images/gallery-04.jpg');"></a>
+                        </div>
 
-                            .ctrlq.fb-button:focus, .ctrlq.fb-button:hover {
-                                transform: scale(1.1);
-                                box-shadow: 0 2px 8px rgba(0, 0, 0, .09), 0 4px 40px rgba(0, 0, 0, .24)
-                            }
+                        <!-- item gallery sidebar -->
+                        <div class="wrap-item-gallery m-b-10">
+                            <a class="item-gallery bg-img1" href="images/gallery-05.jpg" data-lightbox="gallery"
+                               style="background-image: url('images/gallery-05.jpg');"></a>
+                        </div>
 
-                        .fb-widget {
-                            background: #fff;
-                            z-index: 1000;
-                            position: fixed;
-                            width: 360px;
-                            height: 435px;
-                            overflow: hidden;
-                            opacity: 0;
-                            bottom: 0;
-                            right: 24px;
-                            border-radius: 6px;
-                            -o-border-radius: 6px;
-                            -webkit-border-radius: 6px;
-                            box-shadow: 0 5px 40px rgba(0, 0, 0, .16);
-                            -webkit-box-shadow: 0 5px 40px rgba(0, 0, 0, .16);
-                            -moz-box-shadow: 0 5px 40px rgba(0, 0, 0, .16);
-                            -o-box-shadow: 0 5px 40px rgba(0, 0, 0, .16)
-                        }
+                        <!-- item gallery sidebar -->
+                        <div class="wrap-item-gallery m-b-10">
+                            <a class="item-gallery bg-img1" href="images/gallery-06.jpg" data-lightbox="gallery"
+                               style="background-image: url('images/gallery-06.jpg');"></a>
+                        </div>
 
-                        .fb-credit {
-                            text-align: center;
-                            margin-top: 8px
-                        }
+                        <!-- item gallery sidebar -->
+                        <div class="wrap-item-gallery m-b-10">
+                            <a class="item-gallery bg-img1" href="images/gallery-07.jpg" data-lightbox="gallery"
+                               style="background-image: url('images/gallery-07.jpg');"></a>
+                        </div>
 
-                            .fb-credit a {
-                                transition: none;
-                                color: #bec2c9;
-                                font-family: Helvetica, Arial, sans-serif;
-                                font-size: 12px;
-                                text-decoration: none;
-                                border: 0;
-                                font-weight: 400
-                            }
+                        <!-- item gallery sidebar -->
+                        <div class="wrap-item-gallery m-b-10">
+                            <a class="item-gallery bg-img1" href="images/gallery-08.jpg" data-lightbox="gallery"
+                               style="background-image: url('images/gallery-08.jpg');"></a>
+                        </div>
 
-                        .ctrlq.fb-overlay {
-                            z-index: 0;
-                            position: fixed;
-                            height: 100vh;
-                            width: 100vw;
-                            -webkit-transition: opacity .4s, visibility .4s;
-                            transition: opacity .4s, visibility .4s;
-                            top: 0;
-                            left: 0;
-                            background: rgba(0, 0, 0, .05);
-                            display: none
-                        }
-
-                        .ctrlq.fb-close {
-                            z-index: 4;
-                            padding: 0 6px;
-                            background: #365899;
-                            font-weight: 700;
-                            font-size: 11px;
-                            color: #fff;
-                            margin: 8px;
-                            border-radius: 3px
-                        }
-
-                            .ctrlq.fb-close::after {
-                                content: "X";
-                                font-family: sans-serif
-                            }
-
-                        .bubble {
-                            width: 20px;
-                            height: 20px;
-                            background: #c00;
-                            color: #fff;
-                            position: absolute;
-                            z-index: 999999999;
-                            text-align: center;
-                            vertical-align: middle;
-                            top: -2px;
-                            left: -5px;
-                            border-radius: 50%;
-                        }
-
-                        .bubble-msg {
-                            width: 120px;
-                            left: -140px;
-                            top: 5px;
-                            position: relative;
-                            background: rgba(59, 89, 152, .8);
-                            color: #fff;
-                            padding: 5px 8px;
-                            border-radius: 5px;
-                            text-align: center;
-                            font-size: 13px;
-                        }
-                    </style>
-
+                        <!-- item gallery sidebar -->
+                        <div class="wrap-item-gallery m-b-10">
+                            <a class="item-gallery bg-img1" href="images/gallery-09.jpg" data-lightbox="gallery"
+                               style="background-image: url('images/gallery-09.jpg');"></a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="sidebar-gallery w-full">
@@ -461,6 +514,8 @@
     </div>
     <section class="section-slide">
         <div class="wrap-slick1 rs2-slick1">
+
+
             <div class="slick1">
                 <div class="item-slick1 bg-overlay1" style="background-image: url(../../Content/IMG/anhnen.pn.jfif);"
                      data-thumb="../../Content/IMG/anhnen.pn.jfif" data-caption="Place 1">
@@ -548,175 +603,53 @@
         </div>
     </section>
     <div class="sec-banner bg0 p-t-95 p-b-55">
+
         <div class="container">
             <div class="row">
-                <div class="col-md-6 p-b-30 m-lr-auto">
-                    <!-- Block1 -->
-                    <div class="block1 wrap-pic-w">
-                        <img src="~/Content/IMG/dalat.png" />
-
-
-                        <a href="product.html"
-                           class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                            <div class="block1-txt-child1 flex-col-l">
-                                <span class="block1-name ltext-102 trans-04 p-b-8">
-                                    nha trang
-                                </span>
-
-                                <span class="block1-info stext-102 trans-04">
-                                    New Trend
-                                </span>
-                            </div>
-
-                            <div class="block1-txt-child2 p-b-4 trans-05">
-                                <div class="block1-link stext-101 cl0 trans-09">
-                                    Shop Now
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 p-b-30 m-lr-auto">
-                    <!-- Block1 -->
-                    <div class="block1 wrap-pic-w">
-                        <img src="~/Content/IMG/hanoi.png" />
-                        <a href="product.html"
-                           class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                            <div class="block1-txt-child1 flex-col-l">
-                                <span class="block1-name ltext-102 trans-04 p-b-8">
-                                    Men
-                                </span>
-
-                                <span class="block1-info stext-102 trans-04">
-                                    New Trend
-                                </span>
-                            </div>
-
-                            <div class="block1-txt-child2 p-b-4 trans-05">
-                                <div class="block1-link stext-101 cl0 trans-09">
-                                    Shop Now
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
-                    <!-- Block1 -->
-                    <div class="block1 wrap-pic-w">
-                        <img src="~/Content/IMG/saigon.png" />
-                        <a href="product.html"
-                           class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                            <div class="block1-txt-child1 flex-col-l">
-                                <span class="block1-name ltext-102 trans-04 p-b-8">
-                                    Watches
-                                </span>
-
-                                <span class="block1-info stext-102 trans-04">
-                                    Spring 2018
-                                </span>
-                            </div>
-
-                            <div class="block1-txt-child2 p-b-4 trans-05">
-                                <div class="block1-link stext-101 cl0 trans-09">
-                                    Shop Now
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
-                    <!-- Block1 -->
-                    <div class="block1 wrap-pic-w">
-                        <img src="~/Content/IMG/nhatrang.png" />
-                        <a href="product.html"
-                           class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                            <div class="block1-txt-child1 flex-col-l">
-                                <span class="block1-name ltext-102 trans-04 p-b-8">
-                                    Bags
-                                </span>
-
-                                <span class="block1-info stext-102 trans-04">
-                                    Spring 2018
-                                </span>
-                            </div>
-
-                            <div class="block1-txt-child2 p-b-4 trans-05">
-                                <div class="block1-link stext-101 cl0 trans-09">
-                                    Shop Now
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
-                    <!-- Block1 -->
-                    <div class="block1 wrap-pic-w">
-                        <img src="~/Content/IMG/phanthiet.png" />
-                        <a href="product.html"
-                           class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                            <div class="block1-txt-child1 flex-col-l">
-                                <span class="block1-name ltext-102 trans-04 p-b-8">
-                                    Accessories
-                                </span>
-
-                                <span class="block1-info stext-102 trans-04">
-                                    Spring 2018
-                                </span>
-                            </div>
-
-                            <div class="block1-txt-child2 p-b-4 trans-05">
-                                <div class="block1-link stext-101 cl0 trans-09">
-                                    Shop Now
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                <h3 class="ltext-103 cl5">
+                    Khu Vực Nổi Tiếng
+                </h3>
+                @Html.Action("KhuVuc", "HomePage")
+ 
             </div>
         </div>
     </div>
     <section class="bg0 p-t-23 p-b-130">
         <div class="container">
+
             <div class="p-b-10">
                 <h3 class="ltext-103 cl5">
-                    Product Overview
+                    Danh Sách Phòng
                 </h3>
             </div>
 
             <div class="flex-w flex-sb-m p-b-52">
                 <div class="flex-w flex-l-m filter-tope-group m-tb-10">
                     <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
-                        All Products
+                        @Html.Action("Loai", "HomePage")
                     </button>
 
-                    <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".women">
-                        Women
-                    </button>
+                    @*<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".women">
+                            Phòng Đơn
+                        </button>*@
 
-                    <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".men">
-                        Men
-                    </button>
-
-                    <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".bag">
-                        Bag
-                    </button>
-
-                    <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".shoes">
-                        Shoes
-                    </button>
-
-                    <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".watches">
-                        Watches
-                    </button>
                 </div>
-                <div class="menu">
-                @RenderBody()
+
+                <div class="flex-w flex-c-m m-tb-10">
+                    <div class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
+                        <i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
+                        <i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
+                        Filter
                     </div>
-                <!-- Search product -->F
+
+                    <div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
+                        <i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
+                        <i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
+                        Search
+                    </div>
+                </div>
+
+                <!-- Search product -->
                 <div class="dis-none panel-search w-full p-t-10 p-b-15">
                     <div class="bor8 dis-flex p-l-15">
                         <button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
@@ -923,20 +856,19 @@
                 </div>
             </div>
 
-                        </div>
+
+            @RenderBody()
+            <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                <!-- Block2 -->
+
+
+            </div>
+
 
 
 
             <!-- Pagination -->
-            <div class="flex-c-m flex-w w-full p-t-38">
-                <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7 active-pagination1">
-                    1
-                </a>
 
-                <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7">
-                    2
-                </a>
-            </div>
         </div>
     </section>
     <div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
@@ -1129,7 +1061,7 @@
     <script src="~/Scripts/slick.min.js"></script>
     <script src="~/Scripts/slick-custom.js"></script>
     <!--===============================================================================================-->
-    <script src="~/Scripts/parallax100.js"></script>
+    <script src="vendor/parallax100/parallax100.js"></script>
     <script>
         $('.parallax100').parallax100();
     </script>
@@ -1204,14 +1136,14 @@
         });
     </script>
     <!--===============================================================================================-->
-    <script src="~/Scripts/main.js"></script>
-    <script src="~/Scripts/main.js"></script>
+    <script src="js/main.js"></script>
     <div class="btn-back-to-top" id="myBtn">
         <span class="symbol-btn-back-to-top">
             <i class="zmdi zmdi-chevron-up"></i>
         </span>
     </div>
     <footer class="bg3 p-t-75 p-b-32">
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-lg-3 p-b-50">
@@ -1222,25 +1154,25 @@
                     <ul>
                         <li class="p-b-10">
                             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                1
+                                ....
                             </a>
                         </li>
 
                         <li class="p-b-10">
                             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                2
+                                ...
                             </a>
                         </li>
 
                         <li class="p-b-10">
                             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                3
+                                ...
                             </a>
                         </li>
 
                         <li class="p-b-10">
                             <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-                                4
+                                ...
                             </a>
                         </li>
                     </ul>
@@ -1284,12 +1216,11 @@
                     </h4>
 
                     <p class="stext-107 cl7 size-201">
-                        Any questions? GHI CÁI ĐỊA CHỈ VÀO
+                        cccccccccccccccccccccccccccccccccccccccccccc
                     </p>
 
                     <div class="p-t-27">
-                        <a href="" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-          
+                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
                             <i class="fa fa-facebook"></i>
                         </a>
 
@@ -1352,7 +1283,8 @@
                     Copyright &copy;
                     <script>
                         document.write(new Date().getFullYear());
-                    </script> Create By Nobody
+                    </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                                                                  aria-hidden="true"></i> by <a href="##" target="_blank">....</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
                 </p>

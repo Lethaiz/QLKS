@@ -1,7 +1,42 @@
-﻿
+﻿@using QLKS.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<Phong>
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_HomePage.cshtml";
+    Layout = "~/Views/Shared/LayoutPage.cshtml";
 }
 
-<h2>HomePage</h2>
+@foreach (var s in Model)
+    {
+        <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+            <div class="block2">
+                <div class="block2-pic hov-img0 label-new" data-label="New">
+                    <img src="~/Content/IMG/@s.ANH" width="262" height="147" alt="IMG-PRODUCT">
+
+                    <a href="@Url.Action("Details","HomePage", new { id =s.MaPhong })"
+                       class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                        Quick View
+                    </a>
+                </div>
+
+                <div class="block2-txt flex-w flex-t p-t-14">
+                    <div class="block2-txt-child1 flex-col-l ">
+                        <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                            <h5 class="SP" style="padding-top:50px">Số Phòng: @s.SoPhong</h5>
+                        </a>
+                        <span class="stext-105 cl3">
+                            Giá Phòng:  @s.GiaPhong VND
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+            }
+
+    <div class="clear"></div>
+            Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber) /@Model.PageCount
+            <div class="MenuTrang">
+
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+            </div>

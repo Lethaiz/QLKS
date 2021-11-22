@@ -1,0 +1,11 @@
+﻿@model IEnumerable<QLKS.Models.KHUVUC>
+
+@{
+ 
+    Layout =null
+}
+@foreach (var i in Model)
+{
+    <a href="@Url.Action("SPTheoKV","HomePage",new { id = i.MAKV })"> @i.TENKV </a>
+}
+
