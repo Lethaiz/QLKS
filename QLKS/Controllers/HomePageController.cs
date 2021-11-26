@@ -2,6 +2,7 @@
 using QLKS.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -19,7 +20,7 @@ namespace QLKS.Controllers
 
         public ActionResult Index(int? page)
         {
-            int pageSize = 4;
+            int pageSize = 8;
             int pageNum = (page ?? 1);
 
             var spmoi = layhangmoi(12);
@@ -54,13 +55,14 @@ namespace QLKS.Controllers
 
         public ActionResult SPTheoKV(int id)
         {
-            var KV = from s in data.KHUVUCs where s.MAKV == id select s;
+            var KV = from s in data.Phongs where s.MAKV == id select s;
             return View(KV);
         }
         public ActionResult About()
         {
             return View();
         }
+     
 
     }
 }

@@ -39,9 +39,6 @@ namespace QLKS.Models
     partial void InsertChiTietHoaDon(ChiTietHoaDon instance);
     partial void UpdateChiTietHoaDon(ChiTietHoaDon instance);
     partial void DeleteChiTietHoaDon(ChiTietHoaDon instance);
-    partial void InsertDichVu(DichVu instance);
-    partial void UpdateDichVu(DichVu instance);
-    partial void DeleteDichVu(DichVu instance);
     partial void InsertHoaDon(HoaDon instance);
     partial void UpdateHoaDon(HoaDon instance);
     partial void DeleteHoaDon(HoaDon instance);
@@ -54,9 +51,6 @@ namespace QLKS.Models
     partial void InsertLoaiPhong(LoaiPhong instance);
     partial void UpdateLoaiPhong(LoaiPhong instance);
     partial void DeleteLoaiPhong(LoaiPhong instance);
-    partial void InsertNhanVien(NhanVien instance);
-    partial void UpdateNhanVien(NhanVien instance);
-    partial void DeleteNhanVien(NhanVien instance);
     partial void InsertPhong(Phong instance);
     partial void UpdatePhong(Phong instance);
     partial void DeletePhong(Phong instance);
@@ -116,14 +110,6 @@ namespace QLKS.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<DichVu> DichVus
-		{
-			get
-			{
-				return this.GetTable<DichVu>();
-			}
-		}
-		
 		public System.Data.Linq.Table<HoaDon> HoaDons
 		{
 			get
@@ -153,14 +139,6 @@ namespace QLKS.Models
 			get
 			{
 				return this.GetTable<LoaiPhong>();
-			}
-		}
-		
-		public System.Data.Linq.Table<NhanVien> NhanViens
-		{
-			get
-			{
-				return this.GetTable<NhanVien>();
 			}
 		}
 		
@@ -403,9 +381,7 @@ namespace QLKS.Models
 		
 		private int _MaPhong;
 		
-		private System.Nullable<decimal> _GiaDV;
-		
-		private System.Nullable<int> _SoLuong;
+		private System.Nullable<int> _SoDem;
 		
 		private System.Nullable<decimal> _ThanhTien;
 		
@@ -421,10 +397,8 @@ namespace QLKS.Models
     partial void OnMaHDChanged();
     partial void OnMaPhongChanging(int value);
     partial void OnMaPhongChanged();
-    partial void OnGiaDVChanging(System.Nullable<decimal> value);
-    partial void OnGiaDVChanged();
-    partial void OnSoLuongChanging(System.Nullable<int> value);
-    partial void OnSoLuongChanged();
+    partial void OnSoDemChanging(System.Nullable<int> value);
+    partial void OnSoDemChanged();
     partial void OnThanhTienChanging(System.Nullable<decimal> value);
     partial void OnThanhTienChanged();
     #endregion
@@ -460,7 +434,7 @@ namespace QLKS.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPhong", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPhong", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int MaPhong
 		{
 			get
@@ -484,42 +458,22 @@ namespace QLKS.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaDV", DbType="Money")]
-		public System.Nullable<decimal> GiaDV
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoDem", DbType="Int")]
+		public System.Nullable<int> SoDem
 		{
 			get
 			{
-				return this._GiaDV;
+				return this._SoDem;
 			}
 			set
 			{
-				if ((this._GiaDV != value))
+				if ((this._SoDem != value))
 				{
-					this.OnGiaDVChanging(value);
+					this.OnSoDemChanging(value);
 					this.SendPropertyChanging();
-					this._GiaDV = value;
-					this.SendPropertyChanged("GiaDV");
-					this.OnGiaDVChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int")]
-		public System.Nullable<int> SoLuong
-		{
-			get
-			{
-				return this._SoLuong;
-			}
-			set
-			{
-				if ((this._SoLuong != value))
-				{
-					this.OnSoLuongChanging(value);
-					this.SendPropertyChanging();
-					this._SoLuong = value;
-					this.SendPropertyChanged("SoLuong");
-					this.OnSoLuongChanged();
+					this._SoDem = value;
+					this.SendPropertyChanged("SoDem");
+					this.OnSoDemChanged();
 				}
 			}
 		}
@@ -633,116 +587,6 @@ namespace QLKS.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DichVu")]
-	public partial class DichVu : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaDV;
-		
-		private string _TenDV;
-		
-		private System.Nullable<decimal> _GiaDV;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaDVChanging(int value);
-    partial void OnMaDVChanged();
-    partial void OnTenDVChanging(string value);
-    partial void OnTenDVChanged();
-    partial void OnGiaDVChanging(System.Nullable<decimal> value);
-    partial void OnGiaDVChanged();
-    #endregion
-		
-		public DichVu()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDV", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaDV
-		{
-			get
-			{
-				return this._MaDV;
-			}
-			set
-			{
-				if ((this._MaDV != value))
-				{
-					this.OnMaDVChanging(value);
-					this.SendPropertyChanging();
-					this._MaDV = value;
-					this.SendPropertyChanged("MaDV");
-					this.OnMaDVChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDV", DbType="NVarChar(150)")]
-		public string TenDV
-		{
-			get
-			{
-				return this._TenDV;
-			}
-			set
-			{
-				if ((this._TenDV != value))
-				{
-					this.OnTenDVChanging(value);
-					this.SendPropertyChanging();
-					this._TenDV = value;
-					this.SendPropertyChanged("TenDV");
-					this.OnTenDVChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaDV", DbType="Money")]
-		public System.Nullable<decimal> GiaDV
-		{
-			get
-			{
-				return this._GiaDV;
-			}
-			set
-			{
-				if ((this._GiaDV != value))
-				{
-					this.OnGiaDVChanging(value);
-					this.SendPropertyChanging();
-					this._GiaDV = value;
-					this.SendPropertyChanged("GiaDV");
-					this.OnGiaDVChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HoaDon")]
 	public partial class HoaDon : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -751,23 +595,17 @@ namespace QLKS.Models
 		
 		private int _MaHD;
 		
-		private int _MaNV;
-		
 		private int _MaKH;
 		
 		private int _MaPhong;
 		
-		private System.Nullable<int> _SoDem;
+		private System.Nullable<System.DateTime> _NGAYDAT;
 		
-		private System.Nullable<System.DateTime> _NgayTra;
-		
-		private System.Nullable<decimal> _TongTien;
+		private System.Nullable<System.DateTime> _NGAYNHAN;
 		
 		private EntitySet<ChiTietHoaDon> _ChiTietHoaDons;
 		
 		private EntityRef<KhachHang> _KhachHang;
-		
-		private EntityRef<NhanVien> _NhanVien;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -775,25 +613,20 @@ namespace QLKS.Models
     partial void OnCreated();
     partial void OnMaHDChanging(int value);
     partial void OnMaHDChanged();
-    partial void OnMaNVChanging(int value);
-    partial void OnMaNVChanged();
     partial void OnMaKHChanging(int value);
     partial void OnMaKHChanged();
     partial void OnMaPhongChanging(int value);
     partial void OnMaPhongChanged();
-    partial void OnSoDemChanging(System.Nullable<int> value);
-    partial void OnSoDemChanged();
-    partial void OnNgayTraChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgayTraChanged();
-    partial void OnTongTienChanging(System.Nullable<decimal> value);
-    partial void OnTongTienChanged();
+    partial void OnNGAYDATChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYDATChanged();
+    partial void OnNGAYNHANChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYNHANChanged();
     #endregion
 		
 		public HoaDon()
 		{
 			this._ChiTietHoaDons = new EntitySet<ChiTietHoaDon>(new Action<ChiTietHoaDon>(this.attach_ChiTietHoaDons), new Action<ChiTietHoaDon>(this.detach_ChiTietHoaDons));
 			this._KhachHang = default(EntityRef<KhachHang>);
-			this._NhanVien = default(EntityRef<NhanVien>);
 			OnCreated();
 		}
 		
@@ -813,30 +646,6 @@ namespace QLKS.Models
 					this._MaHD = value;
 					this.SendPropertyChanged("MaHD");
 					this.OnMaHDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNV", DbType="Int NOT NULL")]
-		public int MaNV
-		{
-			get
-			{
-				return this._MaNV;
-			}
-			set
-			{
-				if ((this._MaNV != value))
-				{
-					if (this._NhanVien.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaNVChanging(value);
-					this.SendPropertyChanging();
-					this._MaNV = value;
-					this.SendPropertyChanged("MaNV");
-					this.OnMaNVChanged();
 				}
 			}
 		}
@@ -885,62 +694,42 @@ namespace QLKS.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoDem", DbType="Int")]
-		public System.Nullable<int> SoDem
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYDAT", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYDAT
 		{
 			get
 			{
-				return this._SoDem;
+				return this._NGAYDAT;
 			}
 			set
 			{
-				if ((this._SoDem != value))
+				if ((this._NGAYDAT != value))
 				{
-					this.OnSoDemChanging(value);
+					this.OnNGAYDATChanging(value);
 					this.SendPropertyChanging();
-					this._SoDem = value;
-					this.SendPropertyChanged("SoDem");
-					this.OnSoDemChanged();
+					this._NGAYDAT = value;
+					this.SendPropertyChanged("NGAYDAT");
+					this.OnNGAYDATChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayTra", DbType="Date")]
-		public System.Nullable<System.DateTime> NgayTra
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYNHAN", DbType="Date")]
+		public System.Nullable<System.DateTime> NGAYNHAN
 		{
 			get
 			{
-				return this._NgayTra;
+				return this._NGAYNHAN;
 			}
 			set
 			{
-				if ((this._NgayTra != value))
+				if ((this._NGAYNHAN != value))
 				{
-					this.OnNgayTraChanging(value);
+					this.OnNGAYNHANChanging(value);
 					this.SendPropertyChanging();
-					this._NgayTra = value;
-					this.SendPropertyChanged("NgayTra");
-					this.OnNgayTraChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongTien", DbType="Money")]
-		public System.Nullable<decimal> TongTien
-		{
-			get
-			{
-				return this._TongTien;
-			}
-			set
-			{
-				if ((this._TongTien != value))
-				{
-					this.OnTongTienChanging(value);
-					this.SendPropertyChanging();
-					this._TongTien = value;
-					this.SendPropertyChanged("TongTien");
-					this.OnTongTienChanged();
+					this._NGAYNHAN = value;
+					this.SendPropertyChanged("NGAYNHAN");
+					this.OnNGAYNHANChanged();
 				}
 			}
 		}
@@ -988,40 +777,6 @@ namespace QLKS.Models
 						this._MaKH = default(int);
 					}
 					this.SendPropertyChanged("KhachHang");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_HoaDon", Storage="_NhanVien", ThisKey="MaNV", OtherKey="MaNV", IsForeignKey=true)]
-		public NhanVien NhanVien
-		{
-			get
-			{
-				return this._NhanVien.Entity;
-			}
-			set
-			{
-				NhanVien previousValue = this._NhanVien.Entity;
-				if (((previousValue != value) 
-							|| (this._NhanVien.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._NhanVien.Entity = null;
-						previousValue.HoaDons.Remove(this);
-					}
-					this._NhanVien.Entity = value;
-					if ((value != null))
-					{
-						value.HoaDons.Add(this);
-						this._MaNV = value.MaNV;
-					}
-					else
-					{
-						this._MaNV = default(int);
-					}
-					this.SendPropertyChanged("NhanVien");
 				}
 			}
 		}
@@ -1083,8 +838,6 @@ namespace QLKS.Models
 		
 		private string _Matkhau;
 		
-		private string _ResetPasswordCode;
-		
 		private EntitySet<HoaDon> _HoaDons;
 		
     #region Extensibility Method Definitions
@@ -1109,8 +862,6 @@ namespace QLKS.Models
     partial void OnTaikhoanChanged();
     partial void OnMatkhauChanging(string value);
     partial void OnMatkhauChanged();
-    partial void OnResetPasswordCodeChanging(string value);
-    partial void OnResetPasswordCodeChanged();
     #endregion
 		
 		public KhachHang()
@@ -1295,26 +1046,6 @@ namespace QLKS.Models
 					this._Matkhau = value;
 					this.SendPropertyChanged("Matkhau");
 					this.OnMatkhauChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResetPasswordCode", DbType="NVarChar(150)")]
-		public string ResetPasswordCode
-		{
-			get
-			{
-				return this._ResetPasswordCode;
-			}
-			set
-			{
-				if ((this._ResetPasswordCode != value))
-				{
-					this.OnResetPasswordCodeChanging(value);
-					this.SendPropertyChanging();
-					this._ResetPasswordCode = value;
-					this.SendPropertyChanged("ResetPasswordCode");
-					this.OnResetPasswordCodeChanged();
 				}
 			}
 		}
@@ -1617,120 +1348,6 @@ namespace QLKS.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NhanVien")]
-	public partial class NhanVien : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaNV;
-		
-		private string _TenNV;
-		
-		private EntitySet<HoaDon> _HoaDons;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaNVChanging(int value);
-    partial void OnMaNVChanged();
-    partial void OnTenNVChanging(string value);
-    partial void OnTenNVChanged();
-    #endregion
-		
-		public NhanVien()
-		{
-			this._HoaDons = new EntitySet<HoaDon>(new Action<HoaDon>(this.attach_HoaDons), new Action<HoaDon>(this.detach_HoaDons));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNV", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaNV
-		{
-			get
-			{
-				return this._MaNV;
-			}
-			set
-			{
-				if ((this._MaNV != value))
-				{
-					this.OnMaNVChanging(value);
-					this.SendPropertyChanging();
-					this._MaNV = value;
-					this.SendPropertyChanged("MaNV");
-					this.OnMaNVChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenNV", DbType="NVarChar(150)")]
-		public string TenNV
-		{
-			get
-			{
-				return this._TenNV;
-			}
-			set
-			{
-				if ((this._TenNV != value))
-				{
-					this.OnTenNVChanging(value);
-					this.SendPropertyChanging();
-					this._TenNV = value;
-					this.SendPropertyChanged("TenNV");
-					this.OnTenNVChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_HoaDon", Storage="_HoaDons", ThisKey="MaNV", OtherKey="MaNV")]
-		public EntitySet<HoaDon> HoaDons
-		{
-			get
-			{
-				return this._HoaDons;
-			}
-			set
-			{
-				this._HoaDons.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_HoaDons(HoaDon entity)
-		{
-			this.SendPropertyChanging();
-			entity.NhanVien = this;
-		}
-		
-		private void detach_HoaDons(HoaDon entity)
-		{
-			this.SendPropertyChanging();
-			entity.NhanVien = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Phong")]
 	public partial class Phong : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1745,7 +1362,7 @@ namespace QLKS.Models
 		
 		private System.Nullable<decimal> _GiaPhong;
 		
-		private System.Nullable<int> _SoPhong;
+		private string _SoPhong;
 		
 		private string _Mota;
 		
@@ -1769,7 +1386,7 @@ namespace QLKS.Models
     partial void OnMaLPChanged();
     partial void OnGiaPhongChanging(System.Nullable<decimal> value);
     partial void OnGiaPhongChanged();
-    partial void OnSoPhongChanging(System.Nullable<int> value);
+    partial void OnSoPhongChanging(string value);
     partial void OnSoPhongChanged();
     partial void OnMotaChanging(string value);
     partial void OnMotaChanged();
@@ -1873,8 +1490,8 @@ namespace QLKS.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoPhong", DbType="Int")]
-		public System.Nullable<int> SoPhong
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoPhong", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string SoPhong
 		{
 			get
 			{

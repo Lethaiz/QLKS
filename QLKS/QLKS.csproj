@@ -140,6 +140,7 @@
     <Compile Include="Controllers\QLKHUVUCController.cs" />
     <Compile Include="Controllers\QLLPController.cs" />
     <Compile Include="Controllers\QLPHONGController.cs" />
+    <Compile Include="Controllers\THANHTOANController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -149,6 +150,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbQLKS.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\THANHTIEN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -303,7 +305,6 @@
     <Content Include="Views\QLLP\xoaloai.cshtml" />
     <Content Include="Views\QLLP\Sualoai.cshtml" />
     <Content Include="Views\QLPHONG\QLPhong.cshtml" />
-    <Content Include="Views\QLPHONG\Themmoi.cshtml" />
     <Content Include="Views\QLPHONG\Chitiet.cshtml" />
     <Content Include="Views\QLPHONG\Xoa.cshtml" />
     <Content Include="Views\QLPHONG\Sua.cshtml" />
@@ -319,6 +320,14 @@
     <Content Include="Views\HomePage\KV.cshtml" />
     <Content Include="Views\QLKHUVUC\Themmoi.cshtml" />
     <Content Include="Views\QLKHUVUC\taomoi.cshtml" />
+    <Content Include="Views\Shared\LayoutDH.cshtml" />
+    <Content Include="Views\THANHTOAN\DONTT.cshtml" />
+    <Content Include="Views\THANHTOAN\THANHTOAN.cshtml" />
+    <Content Include="Views\THANHTOAN\THANHTIENPartial.cshtml" />
+    <Content Include="Views\THANHTOAN\DatHang.cshtml" />
+    <Content Include="Views\THANHTOAN\Donhang.cshtml" />
+    <Content Include="Views\HomePage\Themmoi.cshtml" />
+    <Content Include="Views\QLPHONG\Themmoi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

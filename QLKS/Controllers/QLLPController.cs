@@ -59,10 +59,10 @@ namespace QLKS.Controllers
                 data.LoaiPhongs.InsertOnSubmit(l);
                 data.SubmitChanges();
 
-                return RedirectToAction("Loaiphong", "Loaiphong");
+                return RedirectToAction("Loaiphong", "QLLP");
             }
         }
-        //4. Xóa 1 Nhà xuất bản gồm 2 trang: xác nhận xóa và xử lý xóa
+
         [HttpGet]
         public ActionResult xoaloai(int id)
         {
@@ -88,7 +88,7 @@ namespace QLKS.Controllers
                 return RedirectToAction("Loaiphong", "Loaiphong");
             }
         }
-        //5. Điều chỉnh thông tin 1  Nhà xuất bản gồm 2 trang: Xem và điều chỉnh và cập nhật lưu lại
+    
         [HttpGet]
         public ActionResult Sualoai(int id)
         {
